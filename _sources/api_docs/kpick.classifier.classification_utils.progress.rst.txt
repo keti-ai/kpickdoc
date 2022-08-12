@@ -1,0 +1,37 @@
+kpick.classifier.classification\_utils.progress package
+=======================================================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   kpick.classifier.classification_utils.progress.progress
+
+Submodules
+----------
+
+kpick.classifier.classification\_utils.progress.setup module
+------------------------------------------------------------
+
+.. automodule:: kpick.classifier.classification_utils.progress.setup
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.classification\_utils.progress.test\_progress module
+---------------------------------------------------------------------
+
+.. automodule:: kpick.classifier.classification_utils.progress.test_progress
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.classifier.classification_utils.progress
+   :members:
+   :undoc-members:
+   :show-inheritance:

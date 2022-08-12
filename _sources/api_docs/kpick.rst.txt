@@ -1,0 +1,46 @@
+kpick package
+=============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   kpick.apps
+   kpick.base
+   kpick.classifier
+   kpick.dataset
+   kpick.instance_segmentation
+   kpick.matching
+   kpick.object_detection
+   kpick.pick
+   kpick.pose_estimation
+   kpick.segmentation
+
+Submodules
+----------
+
+kpick.detector\_base module
+---------------------------
+
+.. automodule:: kpick.detector_base
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.detectron2\_detector module
+---------------------------------
+
+.. automodule:: kpick.detectron2_detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick
+   :members:
+   :undoc-members:
+   :show-inheritance:

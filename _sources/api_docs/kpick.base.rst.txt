@@ -1,0 +1,21 @@
+kpick.base package
+==================
+
+Submodules
+----------
+
+kpick.base.base module
+----------------------
+
+.. automodule:: kpick.base.base
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.base
+   :members:
+   :undoc-members:
+   :show-inheritance:

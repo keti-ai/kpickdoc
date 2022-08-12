@@ -1,0 +1,21 @@
+kpick.apps.dataset package
+==========================
+
+Submodules
+----------
+
+kpick.apps.dataset.common\_object\_coco module
+----------------------------------------------
+
+.. automodule:: kpick.apps.dataset.common_object_coco
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.apps.dataset
+   :members:
+   :undoc-members:
+   :show-inheritance:

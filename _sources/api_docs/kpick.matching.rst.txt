@@ -1,0 +1,29 @@
+kpick.matching package
+======================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   kpick.matching.qatm
+
+Submodules
+----------
+
+kpick.matching.matching2d module
+--------------------------------
+
+.. automodule:: kpick.matching.matching2d
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.matching
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,69 @@
+kpick.apps.robotplus package
+============================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   kpick.apps.robotplus.datasets
+
+Submodules
+----------
+
+kpick.apps.robotplus.copper\_detector module
+--------------------------------------------
+
+.. automodule:: kpick.apps.robotplus.copper_detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.apps.robotplus.detector module
+------------------------------------
+
+.. automodule:: kpick.apps.robotplus.detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.apps.robotplus.halcon\_pose\_estimator module
+---------------------------------------------------
+
+.. automodule:: kpick.apps.robotplus.halcon_pose_estimator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.apps.robotplus.oi\_detector module
+----------------------------------------
+
+.. automodule:: kpick.apps.robotplus.oi_detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.apps.robotplus.small\_copper\_detector module
+---------------------------------------------------
+
+.. automodule:: kpick.apps.robotplus.small_copper_detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.apps.robotplus.test\_matching2d module
+--------------------------------------------
+
+.. automodule:: kpick.apps.robotplus.test_matching2d
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.apps.robotplus
+   :members:
+   :undoc-members:
+   :show-inheritance:

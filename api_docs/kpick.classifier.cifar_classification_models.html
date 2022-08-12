@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kpick.classifier.cifar_classification_models package &mdash; Kpick 2.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Kpick
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Background:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/info.html">What is  Kpick?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/install.html">What is  Kpick?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html">What is  Kpick?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html#how-to-use">How to use?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html#how-to-contribute">How to contribute?</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kpick</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>kpick.classifier.cifar_classification_models package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api_docs/kpick.classifier.cifar_classification_models.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="kpick-classifier-cifar-classification-models-package">
+<h1>kpick.classifier.cifar_classification_models package<a class="headerlink" href="#kpick-classifier-cifar-classification-models-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-kpick.classifier.cifar_classification_models.alexnet">
+<span id="kpick-classifier-cifar-classification-models-alexnet-module"></span><h2>kpick.classifier.cifar_classification_models.alexnet module<a class="headerlink" href="#module-kpick.classifier.cifar_classification_models.alexnet" title="Permalink to this heading"></a></h2>
+<p>AlexNet for CIFAR10. FC layers are removed. Paddings are adjusted.
+Without BN, the start learning rate should be 0.01
+(c) YANG, Wei</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.alexnet.alexnet">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.alexnet.</span></span><span class="sig-name descname"><span class="pre">alexnet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.alexnet.alexnet" title="Permalink to this definition"></a></dt>
+<dd><p>AlexNet model architecture from the
+<a class="reference external" href="https://arxiv.org/abs/1404.5997">“One weird trick…”</a> paper.</p>
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.cifar_classification_models.densenet">
+<span id="kpick-classifier-cifar-classification-models-densenet-module"></span><h2>kpick.classifier.cifar_classification_models.densenet module<a class="headerlink" href="#module-kpick.classifier.cifar_classification_models.densenet" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.densenet.densenet">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.densenet.</span></span><span class="sig-name descname"><span class="pre">densenet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.densenet.densenet" title="Permalink to this definition"></a></dt>
+<dd><p>Constructs a ResNet model.</p>
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.cifar_classification_models.preresnet">
+<span id="kpick-classifier-cifar-classification-models-preresnet-module"></span><h2>kpick.classifier.cifar_classification_models.preresnet module<a class="headerlink" href="#module-kpick.classifier.cifar_classification_models.preresnet" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.preresnet.preresnet">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.preresnet.</span></span><span class="sig-name descname"><span class="pre">preresnet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.preresnet.preresnet" title="Permalink to this definition"></a></dt>
+<dd><p>Constructs a ResNet model.</p>
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.cifar_classification_models.resnet">
+<span id="kpick-classifier-cifar-classification-models-resnet-module"></span><h2>kpick.classifier.cifar_classification_models.resnet module<a class="headerlink" href="#module-kpick.classifier.cifar_classification_models.resnet" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.resnet.resnet">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.resnet.</span></span><span class="sig-name descname"><span class="pre">resnet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.resnet.resnet" title="Permalink to this definition"></a></dt>
+<dd><p>Constructs a ResNet model.</p>
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.cifar_classification_models.resnet_roi">
+<span id="kpick-classifier-cifar-classification-models-resnet-roi-module"></span><h2>kpick.classifier.cifar_classification_models.resnet_roi module<a class="headerlink" href="#module-kpick.classifier.cifar_classification_models.resnet_roi" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.resnet_roi.resnet_roi">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.resnet_roi.</span></span><span class="sig-name descname"><span class="pre">resnet_roi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.resnet_roi.resnet_roi" title="Permalink to this definition"></a></dt>
+<dd><p>Constructs a ResNet model.</p>
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.cifar_classification_models.resnext">
+<span id="kpick-classifier-cifar-classification-models-resnext-module"></span><h2>kpick.classifier.cifar_classification_models.resnext module<a class="headerlink" href="#module-kpick.classifier.cifar_classification_models.resnext" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.resnext.resnext">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.resnext.</span></span><span class="sig-name descname"><span class="pre">resnext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.resnext.resnext" title="Permalink to this definition"></a></dt>
+<dd><p>Constructs a ResNeXt.</p>
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.cifar_classification_models.vgg">
+<span id="kpick-classifier-cifar-classification-models-vgg-module"></span><h2>kpick.classifier.cifar_classification_models.vgg module<a class="headerlink" href="#module-kpick.classifier.cifar_classification_models.vgg" title="Permalink to this heading"></a></h2>
+<p>VGG for CIFAR10. FC layers are removed.
+(c) YANG, Wei</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.vgg.VGG">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.vgg.</span></span><span class="sig-name descname"><span class="pre">VGG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.vgg.VGG" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.vgg.VGG.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.vgg.VGG.forward" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.vgg.VGG.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#kpick.classifier.cifar_classification_models.vgg.VGG.training" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.vgg.vgg11">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.vgg.</span></span><span class="sig-name descname"><span class="pre">vgg11</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.vgg.vgg11" title="Permalink to this definition"></a></dt>
+<dd><p>VGG 11-layer model (configuration “A”)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pretrained</strong> (<em>bool</em>) – If True, returns a model pre-trained on ImageNet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.vgg.vgg11_bn">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.vgg.</span></span><span class="sig-name descname"><span class="pre">vgg11_bn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.vgg.vgg11_bn" title="Permalink to this definition"></a></dt>
+<dd><p>VGG 11-layer model (configuration “A”) with batch normalization</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.vgg.vgg13">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.vgg.</span></span><span class="sig-name descname"><span class="pre">vgg13</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.vgg.vgg13" title="Permalink to this definition"></a></dt>
+<dd><p>VGG 13-layer model (configuration “B”)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pretrained</strong> (<em>bool</em>) – If True, returns a model pre-trained on ImageNet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.vgg.vgg13_bn">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.vgg.</span></span><span class="sig-name descname"><span class="pre">vgg13_bn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.vgg.vgg13_bn" title="Permalink to this definition"></a></dt>
+<dd><p>VGG 13-layer model (configuration “B”) with batch normalization</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.vgg.vgg16">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.vgg.</span></span><span class="sig-name descname"><span class="pre">vgg16</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.vgg.vgg16" title="Permalink to this definition"></a></dt>
+<dd><p>VGG 16-layer model (configuration “D”)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pretrained</strong> (<em>bool</em>) – If True, returns a model pre-trained on ImageNet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.vgg.vgg16_bn">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.vgg.</span></span><span class="sig-name descname"><span class="pre">vgg16_bn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.vgg.vgg16_bn" title="Permalink to this definition"></a></dt>
+<dd><p>VGG 16-layer model (configuration “D”) with batch normalization</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.vgg.vgg19">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.vgg.</span></span><span class="sig-name descname"><span class="pre">vgg19</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.vgg.vgg19" title="Permalink to this definition"></a></dt>
+<dd><p>VGG 19-layer model (configuration “E”)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pretrained</strong> (<em>bool</em>) – If True, returns a model pre-trained on ImageNet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.vgg.vgg19_bn">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.vgg.</span></span><span class="sig-name descname"><span class="pre">vgg19_bn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.vgg.vgg19_bn" title="Permalink to this definition"></a></dt>
+<dd><p>VGG 19-layer model (configuration ‘E’) with batch normalization</p>
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.cifar_classification_models.wrn">
+<span id="kpick-classifier-cifar-classification-models-wrn-module"></span><h2>kpick.classifier.cifar_classification_models.wrn module<a class="headerlink" href="#module-kpick.classifier.cifar_classification_models.wrn" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.cifar_classification_models.wrn.wrn">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.cifar_classification_models.wrn.</span></span><span class="sig-name descname"><span class="pre">wrn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.cifar_classification_models.wrn.wrn" title="Permalink to this definition"></a></dt>
+<dd><p>Constructs a Wide Residual Networks.</p>
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.cifar_classification_models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-kpick.classifier.cifar_classification_models" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trung Bui.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

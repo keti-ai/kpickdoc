@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kpick.classifier.classification_utils.progress.progress package &mdash; Kpick 2.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Kpick
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Background:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/info.html">What is  Kpick?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/install.html">What is  Kpick?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html">What is  Kpick?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html#how-to-use">How to use?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html#how-to-contribute">How to contribute?</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kpick</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>kpick.classifier.classification_utils.progress.progress package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api_docs/kpick.classifier.classification_utils.progress.progress.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="kpick-classifier-classification-utils-progress-progress-package">
+<h1>kpick.classifier.classification_utils.progress.progress package<a class="headerlink" href="#kpick-classifier-classification-utils-progress-progress-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-kpick.classifier.classification_utils.progress.progress.bar">
+<span id="kpick-classifier-classification-utils-progress-progress-bar-module"></span><h2>kpick.classifier.classification_utils.progress.progress.bar module<a class="headerlink" href="#module-kpick.classifier.classification_utils.progress.progress.bar" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.Bar">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.bar.</span></span><span class="sig-name descname"><span class="pre">Bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.Bar" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.helpers.WritelnMixin" title="kpick.classifier.classification_utils.progress.progress.helpers.WritelnMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">WritelnMixin</span></code></a>, <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.Progress" title="kpick.classifier.classification_utils.progress.progress.Progress"><code class="xref py py-class docutils literal notranslate"><span class="pre">Progress</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.Bar.bar_prefix">
+<span class="sig-name descname"><span class="pre">bar_prefix</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'</span> <span class="pre">|'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.Bar.bar_prefix" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.Bar.bar_suffix">
+<span class="sig-name descname"><span class="pre">bar_suffix</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'|</span> <span class="pre">'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.Bar.bar_suffix" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.Bar.empty_fill">
+<span class="sig-name descname"><span class="pre">empty_fill</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'</span> <span class="pre">'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.Bar.empty_fill" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.Bar.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'#'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.Bar.fill" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.Bar.hide_cursor">
+<span class="sig-name descname"><span class="pre">hide_cursor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.Bar.hide_cursor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.Bar.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.Bar.message" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.Bar.suffix">
+<span class="sig-name descname"><span class="pre">suffix</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'%(index)d/%(max)d'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.Bar.suffix" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.Bar.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.Bar.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.Bar.width">
+<span class="sig-name descname"><span class="pre">width</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.Bar.width" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.ChargingBar">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.bar.</span></span><span class="sig-name descname"><span class="pre">ChargingBar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.ChargingBar" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.bar.Bar" title="kpick.classifier.classification_utils.progress.progress.bar.Bar"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bar</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.ChargingBar.bar_prefix">
+<span class="sig-name descname"><span class="pre">bar_prefix</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'</span> <span class="pre">'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.ChargingBar.bar_prefix" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.ChargingBar.bar_suffix">
+<span class="sig-name descname"><span class="pre">bar_suffix</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'</span> <span class="pre">'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.ChargingBar.bar_suffix" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.ChargingBar.empty_fill">
+<span class="sig-name descname"><span class="pre">empty_fill</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'∙'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.ChargingBar.empty_fill" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.ChargingBar.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'█'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.ChargingBar.fill" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.ChargingBar.suffix">
+<span class="sig-name descname"><span class="pre">suffix</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'%(percent)d%%'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.ChargingBar.suffix" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.FillingCirclesBar">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.bar.</span></span><span class="sig-name descname"><span class="pre">FillingCirclesBar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.FillingCirclesBar" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.bar.ChargingBar" title="kpick.classifier.classification_utils.progress.progress.bar.ChargingBar"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChargingBar</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.FillingCirclesBar.empty_fill">
+<span class="sig-name descname"><span class="pre">empty_fill</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'◯'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.FillingCirclesBar.empty_fill" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.FillingCirclesBar.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'◉'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.FillingCirclesBar.fill" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.FillingSquaresBar">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.bar.</span></span><span class="sig-name descname"><span class="pre">FillingSquaresBar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.FillingSquaresBar" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.bar.ChargingBar" title="kpick.classifier.classification_utils.progress.progress.bar.ChargingBar"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChargingBar</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.FillingSquaresBar.empty_fill">
+<span class="sig-name descname"><span class="pre">empty_fill</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'▢'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.FillingSquaresBar.empty_fill" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.FillingSquaresBar.fill">
+<span class="sig-name descname"><span class="pre">fill</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'▣'</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.FillingSquaresBar.fill" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.IncrementalBar">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.bar.</span></span><span class="sig-name descname"><span class="pre">IncrementalBar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.IncrementalBar" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.bar.Bar" title="kpick.classifier.classification_utils.progress.progress.bar.Bar"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bar</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.IncrementalBar.phases">
+<span class="sig-name descname"><span class="pre">phases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('</span> <span class="pre">',</span> <span class="pre">'▏',</span> <span class="pre">'▎',</span> <span class="pre">'▍',</span> <span class="pre">'▌',</span> <span class="pre">'▋',</span> <span class="pre">'▊',</span> <span class="pre">'▉',</span> <span class="pre">'█')</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.IncrementalBar.phases" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.IncrementalBar.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.IncrementalBar.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.PixelBar">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.bar.</span></span><span class="sig-name descname"><span class="pre">PixelBar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.PixelBar" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.bar.IncrementalBar" title="kpick.classifier.classification_utils.progress.progress.bar.IncrementalBar"><code class="xref py py-class docutils literal notranslate"><span class="pre">IncrementalBar</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.PixelBar.phases">
+<span class="sig-name descname"><span class="pre">phases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('⡀',</span> <span class="pre">'⡄',</span> <span class="pre">'⡆',</span> <span class="pre">'⡇',</span> <span class="pre">'⣇',</span> <span class="pre">'⣧',</span> <span class="pre">'⣷',</span> <span class="pre">'⣿')</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.PixelBar.phases" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.ShadyBar">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.bar.</span></span><span class="sig-name descname"><span class="pre">ShadyBar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.ShadyBar" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.bar.IncrementalBar" title="kpick.classifier.classification_utils.progress.progress.bar.IncrementalBar"><code class="xref py py-class docutils literal notranslate"><span class="pre">IncrementalBar</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.bar.ShadyBar.phases">
+<span class="sig-name descname"><span class="pre">phases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('</span> <span class="pre">',</span> <span class="pre">'░',</span> <span class="pre">'▒',</span> <span class="pre">'▓',</span> <span class="pre">'█')</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.bar.ShadyBar.phases" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.classification_utils.progress.progress.counter">
+<span id="kpick-classifier-classification-utils-progress-progress-counter-module"></span><h2>kpick.classifier.classification_utils.progress.progress.counter module<a class="headerlink" href="#module-kpick.classifier.classification_utils.progress.progress.counter" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.counter.Countdown">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.counter.</span></span><span class="sig-name descname"><span class="pre">Countdown</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.counter.Countdown" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin" title="kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">WriteMixin</span></code></a>, <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.Progress" title="kpick.classifier.classification_utils.progress.progress.Progress"><code class="xref py py-class docutils literal notranslate"><span class="pre">Progress</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.counter.Countdown.hide_cursor">
+<span class="sig-name descname"><span class="pre">hide_cursor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.counter.Countdown.hide_cursor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.counter.Countdown.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.counter.Countdown.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.counter.Counter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.counter.</span></span><span class="sig-name descname"><span class="pre">Counter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.counter.Counter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin" title="kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">WriteMixin</span></code></a>, <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.Infinite" title="kpick.classifier.classification_utils.progress.progress.Infinite"><code class="xref py py-class docutils literal notranslate"><span class="pre">Infinite</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.counter.Counter.hide_cursor">
+<span class="sig-name descname"><span class="pre">hide_cursor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.counter.Counter.hide_cursor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.counter.Counter.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.counter.Counter.message" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.counter.Counter.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.counter.Counter.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.counter.Pie">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.counter.</span></span><span class="sig-name descname"><span class="pre">Pie</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.counter.Pie" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.counter.Stack" title="kpick.classifier.classification_utils.progress.progress.counter.Stack"><code class="xref py py-class docutils literal notranslate"><span class="pre">Stack</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.counter.Pie.phases">
+<span class="sig-name descname"><span class="pre">phases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('○',</span> <span class="pre">'◔',</span> <span class="pre">'◑',</span> <span class="pre">'◕',</span> <span class="pre">'●')</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.counter.Pie.phases" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.counter.Stack">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.counter.</span></span><span class="sig-name descname"><span class="pre">Stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.counter.Stack" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin" title="kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">WriteMixin</span></code></a>, <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.Progress" title="kpick.classifier.classification_utils.progress.progress.Progress"><code class="xref py py-class docutils literal notranslate"><span class="pre">Progress</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.counter.Stack.hide_cursor">
+<span class="sig-name descname"><span class="pre">hide_cursor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.counter.Stack.hide_cursor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.counter.Stack.phases">
+<span class="sig-name descname"><span class="pre">phases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('</span> <span class="pre">',</span> <span class="pre">'▁',</span> <span class="pre">'▂',</span> <span class="pre">'▃',</span> <span class="pre">'▄',</span> <span class="pre">'▅',</span> <span class="pre">'▆',</span> <span class="pre">'▇',</span> <span class="pre">'█')</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.counter.Stack.phases" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.counter.Stack.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.counter.Stack.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.classification_utils.progress.progress.helpers">
+<span id="kpick-classifier-classification-utils-progress-progress-helpers-module"></span><h2>kpick.classifier.classification_utils.progress.progress.helpers module<a class="headerlink" href="#module-kpick.classifier.classification_utils.progress.progress.helpers" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.helpers.SigIntMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.helpers.</span></span><span class="sig-name descname"><span class="pre">SigIntMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.helpers.SigIntMixin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Registers a signal handler that calls finish on SIGINT</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.helpers.</span></span><span class="sig-name descname"><span class="pre">WriteMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin.finish">
+<span class="sig-name descname"><span class="pre">finish</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin.finish" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin.hide_cursor">
+<span class="sig-name descname"><span class="pre">hide_cursor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin.hide_cursor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin.write" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.helpers.WritelnMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.helpers.</span></span><span class="sig-name descname"><span class="pre">WritelnMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.helpers.WritelnMixin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.helpers.WritelnMixin.clearln">
+<span class="sig-name descname"><span class="pre">clearln</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.helpers.WritelnMixin.clearln" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.helpers.WritelnMixin.finish">
+<span class="sig-name descname"><span class="pre">finish</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.helpers.WritelnMixin.finish" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.helpers.WritelnMixin.hide_cursor">
+<span class="sig-name descname"><span class="pre">hide_cursor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.helpers.WritelnMixin.hide_cursor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.helpers.WritelnMixin.writeln">
+<span class="sig-name descname"><span class="pre">writeln</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.helpers.WritelnMixin.writeln" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.classification_utils.progress.progress.spinner">
+<span id="kpick-classifier-classification-utils-progress-progress-spinner-module"></span><h2>kpick.classifier.classification_utils.progress.progress.spinner module<a class="headerlink" href="#module-kpick.classifier.classification_utils.progress.progress.spinner" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.spinner.LineSpinner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.spinner.</span></span><span class="sig-name descname"><span class="pre">LineSpinner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.spinner.LineSpinner" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.spinner.Spinner" title="kpick.classifier.classification_utils.progress.progress.spinner.Spinner"><code class="xref py py-class docutils literal notranslate"><span class="pre">Spinner</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.spinner.LineSpinner.phases">
+<span class="sig-name descname"><span class="pre">phases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['⎺',</span> <span class="pre">'⎻',</span> <span class="pre">'⎼',</span> <span class="pre">'⎽',</span> <span class="pre">'⎼',</span> <span class="pre">'⎻']</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.spinner.LineSpinner.phases" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.spinner.MoonSpinner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.spinner.</span></span><span class="sig-name descname"><span class="pre">MoonSpinner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.spinner.MoonSpinner" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.spinner.Spinner" title="kpick.classifier.classification_utils.progress.progress.spinner.Spinner"><code class="xref py py-class docutils literal notranslate"><span class="pre">Spinner</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.spinner.MoonSpinner.phases">
+<span class="sig-name descname"><span class="pre">phases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['◑',</span> <span class="pre">'◒',</span> <span class="pre">'◐',</span> <span class="pre">'◓']</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.spinner.MoonSpinner.phases" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.spinner.PieSpinner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.spinner.</span></span><span class="sig-name descname"><span class="pre">PieSpinner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.spinner.PieSpinner" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.spinner.Spinner" title="kpick.classifier.classification_utils.progress.progress.spinner.Spinner"><code class="xref py py-class docutils literal notranslate"><span class="pre">Spinner</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.spinner.PieSpinner.phases">
+<span class="sig-name descname"><span class="pre">phases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['◷',</span> <span class="pre">'◶',</span> <span class="pre">'◵',</span> <span class="pre">'◴']</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.spinner.PieSpinner.phases" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.spinner.PixelSpinner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.spinner.</span></span><span class="sig-name descname"><span class="pre">PixelSpinner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.spinner.PixelSpinner" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.spinner.Spinner" title="kpick.classifier.classification_utils.progress.progress.spinner.Spinner"><code class="xref py py-class docutils literal notranslate"><span class="pre">Spinner</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.spinner.PixelSpinner.phases">
+<span class="sig-name descname"><span class="pre">phases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['⣾',</span> <span class="pre">'⣷',</span> <span class="pre">'⣯',</span> <span class="pre">'⣟',</span> <span class="pre">'⡿',</span> <span class="pre">'⢿',</span> <span class="pre">'⣻',</span> <span class="pre">'⣽']</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.spinner.PixelSpinner.phases" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.spinner.Spinner">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.spinner.</span></span><span class="sig-name descname"><span class="pre">Spinner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.spinner.Spinner" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin" title="kpick.classifier.classification_utils.progress.progress.helpers.WriteMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">WriteMixin</span></code></a>, <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.Infinite" title="kpick.classifier.classification_utils.progress.progress.Infinite"><code class="xref py py-class docutils literal notranslate"><span class="pre">Infinite</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.spinner.Spinner.hide_cursor">
+<span class="sig-name descname"><span class="pre">hide_cursor</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.spinner.Spinner.hide_cursor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.spinner.Spinner.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.spinner.Spinner.message" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.spinner.Spinner.phases">
+<span class="sig-name descname"><span class="pre">phases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('-',</span> <span class="pre">'\\',</span> <span class="pre">'|',</span> <span class="pre">'/')</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.spinner.Spinner.phases" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.spinner.Spinner.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.spinner.Spinner.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.classification_utils.progress.progress">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-kpick.classifier.classification_utils.progress.progress" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Infinite">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.</span></span><span class="sig-name descname"><span class="pre">Infinite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Infinite" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Infinite.elapsed">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elapsed</span></span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Infinite.elapsed" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Infinite.elapsed_td">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">elapsed_td</span></span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Infinite.elapsed_td" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Infinite.file">
+<span class="sig-name descname"><span class="pre">file</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stderr&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='UTF-8'&gt;</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Infinite.file" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Infinite.finish">
+<span class="sig-name descname"><span class="pre">finish</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Infinite.finish" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Infinite.iter">
+<span class="sig-name descname"><span class="pre">iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">it</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Infinite.iter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Infinite.next">
+<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Infinite.next" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Infinite.sma_window">
+<span class="sig-name descname"><span class="pre">sma_window</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Infinite.sma_window" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Infinite.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Infinite.start" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Infinite.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Infinite.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Infinite.update_avg">
+<span class="sig-name descname"><span class="pre">update_avg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Infinite.update_avg" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Progress">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.progress.progress.</span></span><span class="sig-name descname"><span class="pre">Progress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Progress" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.classifier.classification_utils.progress.progress.Infinite" title="kpick.classifier.classification_utils.progress.progress.Infinite"><code class="xref py py-class docutils literal notranslate"><span class="pre">Infinite</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Progress.eta">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eta</span></span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Progress.eta" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Progress.eta_td">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eta_td</span></span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Progress.eta_td" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Progress.goto">
+<span class="sig-name descname"><span class="pre">goto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Progress.goto" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Progress.iter">
+<span class="sig-name descname"><span class="pre">iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">it</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Progress.iter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Progress.percent">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">percent</span></span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Progress.percent" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Progress.progress">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">progress</span></span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Progress.progress" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Progress.remaining">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remaining</span></span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Progress.remaining" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.progress.progress.Progress.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.progress.progress.Progress.start" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trung Bui.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+kpick.pick.dataset package
+==========================
+
+Submodules
+----------
+
+kpick.pick.dataset.dataset module
+---------------------------------
+
+.. automodule:: kpick.pick.dataset.dataset
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.pick.dataset.grasp\_cifar10\_dber module
+----------------------------------------------
+
+.. automodule:: kpick.pick.dataset.grasp_cifar10_dber
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.pick.dataset.grip\_cifar10\_dber module
+---------------------------------------------
+
+.. automodule:: kpick.pick.dataset.grip_cifar10_dber
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.pick.dataset.suction\_cifar10\_dber module
+------------------------------------------------
+
+.. automodule:: kpick.pick.dataset.suction_cifar10_dber
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.pick.dataset
+   :members:
+   :undoc-members:
+   :show-inheritance:

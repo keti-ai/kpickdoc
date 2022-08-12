@@ -1,0 +1,21 @@
+kpick.pick.suction package
+==========================
+
+Submodules
+----------
+
+kpick.pick.suction.suction\_detection module
+--------------------------------------------
+
+.. automodule:: kpick.pick.suction.suction_detection
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.pick.suction
+   :members:
+   :undoc-members:
+   :show-inheritance:

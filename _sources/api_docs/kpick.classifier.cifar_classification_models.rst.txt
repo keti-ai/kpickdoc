@@ -1,0 +1,77 @@
+kpick.classifier.cifar\_classification\_models package
+======================================================
+
+Submodules
+----------
+
+kpick.classifier.cifar\_classification\_models.alexnet module
+-------------------------------------------------------------
+
+.. automodule:: kpick.classifier.cifar_classification_models.alexnet
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.cifar\_classification\_models.densenet module
+--------------------------------------------------------------
+
+.. automodule:: kpick.classifier.cifar_classification_models.densenet
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.cifar\_classification\_models.preresnet module
+---------------------------------------------------------------
+
+.. automodule:: kpick.classifier.cifar_classification_models.preresnet
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.cifar\_classification\_models.resnet module
+------------------------------------------------------------
+
+.. automodule:: kpick.classifier.cifar_classification_models.resnet
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.cifar\_classification\_models.resnet\_roi module
+-----------------------------------------------------------------
+
+.. automodule:: kpick.classifier.cifar_classification_models.resnet_roi
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.cifar\_classification\_models.resnext module
+-------------------------------------------------------------
+
+.. automodule:: kpick.classifier.cifar_classification_models.resnext
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.cifar\_classification\_models.vgg module
+---------------------------------------------------------
+
+.. automodule:: kpick.classifier.cifar_classification_models.vgg
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.cifar\_classification\_models.wrn module
+---------------------------------------------------------
+
+.. automodule:: kpick.classifier.cifar_classification_models.wrn
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.classifier.cifar_classification_models
+   :members:
+   :undoc-members:
+   :show-inheritance:

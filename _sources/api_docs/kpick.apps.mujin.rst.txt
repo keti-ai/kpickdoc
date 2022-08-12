@@ -1,0 +1,37 @@
+kpick.apps.mujin package
+========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   kpick.apps.mujin.dataset
+
+Submodules
+----------
+
+kpick.apps.mujin.demo module
+----------------------------
+
+.. automodule:: kpick.apps.mujin.demo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.apps.mujin.detector module
+--------------------------------
+
+.. automodule:: kpick.apps.mujin.detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.apps.mujin
+   :members:
+   :undoc-members:
+   :show-inheritance:

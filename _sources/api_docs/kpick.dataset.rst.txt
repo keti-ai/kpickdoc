@@ -1,0 +1,45 @@
+kpick.dataset package
+=====================
+
+Submodules
+----------
+
+kpick.dataset.coco module
+-------------------------
+
+.. automodule:: kpick.dataset.coco
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.dataset.cornell module
+----------------------------
+
+.. automodule:: kpick.dataset.cornell
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.dataset.grip\_via\_dataset module
+---------------------------------------
+
+.. automodule:: kpick.dataset.grip_via_dataset
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.dataset.via\_dataset module
+---------------------------------
+
+.. automodule:: kpick.dataset.via_dataset
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.dataset
+   :members:
+   :undoc-members:
+   :show-inheritance:

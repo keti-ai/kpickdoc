@@ -1,0 +1,34 @@
+kpick.apps package
+==================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   kpick.apps.dataset
+   kpick.apps.kimchi
+   kpick.apps.mujin
+   kpick.apps.orderpicking
+   kpick.apps.robotplus
+   kpick.apps.samples
+
+Submodules
+----------
+
+kpick.apps.test module
+----------------------
+
+.. automodule:: kpick.apps.test
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.apps
+   :members:
+   :undoc-members:
+   :show-inheritance:

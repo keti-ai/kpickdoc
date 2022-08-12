@@ -1,0 +1,53 @@
+kpick.object\_detection package
+===============================
+
+Submodules
+----------
+
+kpick.object\_detection.demo module
+-----------------------------------
+
+.. automodule:: kpick.object_detection.demo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.object\_detection.install module
+--------------------------------------
+
+.. automodule:: kpick.object_detection.install
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.object\_detection.model module
+------------------------------------
+
+.. automodule:: kpick.object_detection.model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.object\_detection.nanodet\_detector module
+------------------------------------------------
+
+.. automodule:: kpick.object_detection.nanodet_detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.object\_detection.test module
+-----------------------------------
+
+.. automodule:: kpick.object_detection.test
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.object_detection
+   :members:
+   :undoc-members:
+   :show-inheritance:

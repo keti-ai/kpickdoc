@@ -1,0 +1,37 @@
+kpick.matching.qatm package
+===========================
+
+Submodules
+----------
+
+kpick.matching.qatm.QATMer module
+---------------------------------
+
+.. automodule:: kpick.matching.qatm.QATMer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.matching.qatm.qatm module
+-------------------------------
+
+.. automodule:: kpick.matching.qatm.qatm
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.matching.qatm.utils module
+--------------------------------
+
+.. automodule:: kpick.matching.qatm.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.matching.qatm
+   :members:
+   :undoc-members:
+   :show-inheritance:

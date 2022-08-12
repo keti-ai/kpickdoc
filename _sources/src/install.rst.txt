@@ -1,0 +1,123 @@
+Prerequisites
+---------------------
+Python
+==================
+Kpick has been tested with Python3 (verion>=3.6)
+
+Ubuntu
+===================
+Kpick  has been tested with Ubuntu 16.04 and 18.04
+
+CUDA and CUDDNN
+==================
+Kpick  has been tested with CUDA >= 10.0 and CUDNN>=7
+
+1. Install NVIDIA driver
+"""""""""""""""""""""""""
+* check GPU info ::
+
+    sudo lshw -C display or hwinfo --gfxcard --short
+* Install ::
+
+    sudo add-apt-repository ppa:graphics-drivers/ppa
+    sudo apt update
+    reboot
+
+* Open 'Software and update/ Addtional Drivers' and select proper driver
+reboot
+
+2. Install CUDA
+"""""""""""""""""
+* Download *.run file from `Cuda archive`_ ::
+
+    sudo sh cuda_XXX.run
+* Follow the command line promts:
+
+.. note:: Answer 'NO' for question "Install NVIDIA Accelerated Graphics Driver for Linux-XXX?"
+
+3. Install CUDNN
+""""""""""""""""""
+* Download CUDNN from `Cudnn archive`_
+
+* Extract tar file ::
+
+    sudo cp /cuda/include/* /usr/loca/cuda-XX/include
+    sudo cp /cuda/lib64/* /usr/local/cuda-XX/lib64
+
+4. Set up CUDA path
+""""""""""""""""""""
+* Open bashrc in sudo mode ::
+
+    sudo gedit ~/.bashrc
+
+* Add 2 lines to the file ::
+
+    PATH=/usr/local/cuda/bin:$PATH
+    LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+* Activate changes ::
+
+    source  ~/.bashrc
+
+* Create cuda configuration file ::
+
+    sudo gedit /etc/ld.so.conf.d/cuda.conf
+* Add: /usr/local/cuda/lib64 into file
+
+* Active configuration ::
+
+    sudo ldconfig
+
+* Reboot system ::
+
+    reboot
+
+
+.. _Cuda archive: https://developer.nvidia.com/cuda-toolkit-archive
+
+.. _Cudnn archive: https://developer.nvidia.com/rdp/cudnn-archive
+
+
+Virtualenv
+===================
+We highly recommend using a Python environment management system, in particular Virtualenv. ::
+
+    virtualenv venv --python=python3.6
+    source venv/bin/activate
+
+Dependencies
+===================
+* `Pytorch`_ > 1.4.0
+
+.. _Pytorch: https://github.com/keti-ai/kpick-devel
+
+* Cython ::
+
+    pip install Cython
+
+
+Pip Installation
+--------------------
+
+1. Install KETI SDK
+======================
+::
+
+    git clone https://github.com/keti-ai/ketisdk
+    cd ketisdk
+    pip install -e .
+
+2. Install Kpick
+==========================
+::
+
+    git clone https://github.com/keti-ai/kpick-devel.git
+    cd kpick-devel
+    pip install -e .
+
+
+3. Avoid conflicts
+=========================
+::
+
+    To avoid conflicts, each package should NOT INCLUDE by each other.
+    Please use "ip install -e ." instead for make a soft link to a package.

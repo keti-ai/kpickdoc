@@ -1,0 +1,60 @@
+.. Kpick documentation master file, created by
+   sphinx-quickstart on Fri Jul 22 13:57:20 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+KETI's Picking Package
+======================================
+Overview
+--------
+Add some overview here
+
+.. note:: Add some notes here
+
+Links
+-----
+* `Source Code`_
+
+.. _Source Code: https://github.com/keti-ai/kpick-devel
+
+.. image:: images/fig_grasp_detection_overview.png
+   :width: 100 %
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Background:
+
+   src/info.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Installation Guide:
+
+   src/install.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Getting Started:
+
+   src/getting_started.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Apps Development:
+
+   src/apps.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: API Documentation:
+
+   api_docs/modules
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

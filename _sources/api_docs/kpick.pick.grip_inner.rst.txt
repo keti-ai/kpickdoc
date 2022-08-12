@@ -1,0 +1,29 @@
+kpick.pick.grip\_inner package
+==============================
+
+Submodules
+----------
+
+kpick.pick.grip\_inner.grip\_inner module
+-----------------------------------------
+
+.. automodule:: kpick.pick.grip_inner.grip_inner
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.pick.grip\_inner.inner\_grip\_detector module
+---------------------------------------------------
+
+.. automodule:: kpick.pick.grip_inner.inner_grip_detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.pick.grip_inner
+   :members:
+   :undoc-members:
+   :show-inheritance:

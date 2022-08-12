@@ -1,0 +1,21 @@
+kpick.apps.mujin.dataset package
+================================
+
+Submodules
+----------
+
+kpick.apps.mujin.dataset.box\_coco module
+-----------------------------------------
+
+.. automodule:: kpick.apps.mujin.dataset.box_coco
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.apps.mujin.dataset
+   :members:
+   :undoc-members:
+   :show-inheritance:

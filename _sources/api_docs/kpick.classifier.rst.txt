@@ -1,0 +1,55 @@
+kpick.classifier package
+========================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   kpick.classifier.cifar_classification_models
+   kpick.classifier.classification_utils
+   kpick.classifier.models
+
+Submodules
+----------
+
+kpick.classifier.basic\_classification\_models module
+-----------------------------------------------------
+
+.. automodule:: kpick.classifier.basic_classification_models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.classifier\_base module
+----------------------------------------
+
+.. automodule:: kpick.classifier.classifier_base
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.classifier\_base\_org module
+---------------------------------------------
+
+.. automodule:: kpick.classifier.classifier_base_org
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.roi\_classifier module
+---------------------------------------
+
+.. automodule:: kpick.classifier.roi_classifier
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.classifier
+   :members:
+   :undoc-members:
+   :show-inheritance:

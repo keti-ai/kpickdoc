@@ -1,0 +1,21 @@
+kpick.apps.orderpicking package
+===============================
+
+Submodules
+----------
+
+kpick.apps.orderpicking.detector module
+---------------------------------------
+
+.. automodule:: kpick.apps.orderpicking.detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.apps.orderpicking
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,29 @@
+kpick.classifier.models package
+===============================
+
+Submodules
+----------
+
+kpick.classifier.models.mobilenet module
+----------------------------------------
+
+.. automodule:: kpick.classifier.models.mobilenet
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.models.resnet module
+-------------------------------------
+
+.. automodule:: kpick.classifier.models.resnet
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.classifier.models
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,21 @@
+kpick.pick.grip3 package
+========================
+
+Submodules
+----------
+
+kpick.pick.grip3.grip\_3fingers module
+--------------------------------------
+
+.. automodule:: kpick.pick.grip3.grip_3fingers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.pick.grip3
+   :members:
+   :undoc-members:
+   :show-inheritance:

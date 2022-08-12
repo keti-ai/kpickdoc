@@ -1,0 +1,45 @@
+kpick.classifier.classification\_utils.progress.progress package
+================================================================
+
+Submodules
+----------
+
+kpick.classifier.classification\_utils.progress.progress.bar module
+-------------------------------------------------------------------
+
+.. automodule:: kpick.classifier.classification_utils.progress.progress.bar
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.classification\_utils.progress.progress.counter module
+-----------------------------------------------------------------------
+
+.. automodule:: kpick.classifier.classification_utils.progress.progress.counter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.classification\_utils.progress.progress.helpers module
+-----------------------------------------------------------------------
+
+.. automodule:: kpick.classifier.classification_utils.progress.progress.helpers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.classifier.classification\_utils.progress.progress.spinner module
+-----------------------------------------------------------------------
+
+.. automodule:: kpick.classifier.classification_utils.progress.progress.spinner
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.classifier.classification_utils.progress.progress
+   :members:
+   :undoc-members:
+   :show-inheritance:

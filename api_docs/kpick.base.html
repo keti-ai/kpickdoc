@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kpick.base package &mdash; Kpick 2.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Kpick
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Background:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/info.html">What is  Kpick?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/install.html">What is  Kpick?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html">What is  Kpick?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html#how-to-use">How to use?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html#how-to-contribute">How to contribute?</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kpick</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>kpick.base package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api_docs/kpick.base.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="kpick-base-package">
+<h1>kpick.base package<a class="headerlink" href="#kpick-base-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-kpick.base.base">
+<span id="kpick-base-base-module"></span><h2>kpick.base.base module<a class="headerlink" href="#module-kpick.base.base" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.base.base.BasDetect">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.base.base.</span></span><span class="sig-name descname"><span class="pre">BasDetect</span></span><a class="headerlink" href="#kpick.base.base.BasDetect" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>basic detection process</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CFG</span></code>) – configuration arguments</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.base.base.BasDetect.detect">
+<span class="sig-name descname"><span class="pre">detect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.base.base.BasDetect.detect" title="Permalink to this definition"></a></dt>
+<dd><p>predict</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.base.base.BasDetect.get_model">
+<span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.base.base.BasDetect.get_model" title="Permalink to this definition"></a></dt>
+<dd><p>get model</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.base.base.BasDetectObj">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.base.base.</span></span><span class="sig-name descname"><span class="pre">BasDetectObj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.base.base.BasDetectObj" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BasObj</span></code>, <a class="reference internal" href="#kpick.base.base.BasDetect" title="kpick.base.base.BasDetect"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasDetect</span></code></a></p>
+<p>[<code class="xref py py-class docutils literal notranslate"><span class="pre">BasObj</span></code>, <a class="reference internal" href="#kpick.base.base.BasDetect" title="kpick.base.base.BasDetect"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasDetect</span></code></a>] basic detection obj</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">CFG</span></code>) – configuration arguments</p></li>
+<li><p><strong>cfg_path</strong> (<em>.cfg file</em>) – configuation file path</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.base.base.BasDetectObj.reload_params">
+<span class="sig-name descname"><span class="pre">reload_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.base.base.BasDetectObj.reload_params" title="Permalink to this definition"></a></dt>
+<dd><p>in-excution reload arguments from cfg_path</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.base.base.DetGui">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.base.base.</span></span><span class="sig-name descname"><span class="pre">DetGui</span></span><a class="headerlink" href="#kpick.base.base.DetGui" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.base.base.DetGui.finalize_acc">
+<span class="sig-name descname"><span class="pre">finalize_acc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.base.base.DetGui.finalize_acc" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.base.base.DetGui.gui_process_single">
+<span class="sig-name descname"><span class="pre">gui_process_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.base.base.DetGui.gui_process_single" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.base.base.DetGui.init_acc">
+<span class="sig-name descname"><span class="pre">init_acc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.base.base.DetGui.init_acc" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.base.base.DetGuiObj">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.base.base.</span></span><span class="sig-name descname"><span class="pre">DetGuiObj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.base.base.DetGuiObj" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.base.base.BasDetectObj" title="kpick.base.base.BasDetectObj"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasDetectObj</span></code></a>, <a class="reference internal" href="#kpick.base.base.DetGui" title="kpick.base.base.DetGui"><code class="xref py py-class docutils literal notranslate"><span class="pre">DetGui</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.base.base.GuiObj">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.base.base.</span></span><span class="sig-name descname"><span class="pre">GuiObj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.base.base.GuiObj" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BasObj</span></code>, <a class="reference internal" href="#kpick.base.base.DetGui" title="kpick.base.base.DetGui"><code class="xref py py-class docutils literal notranslate"><span class="pre">DetGui</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-kpick.base">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-kpick.base" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trung Bui.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

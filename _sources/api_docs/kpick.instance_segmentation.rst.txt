@@ -1,0 +1,37 @@
+kpick.instance\_segmentation package
+====================================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   kpick.instance_segmentation.configs
+
+Submodules
+----------
+
+kpick.instance\_segmentation.maskrcnn\_detectron2 module
+--------------------------------------------------------
+
+.. automodule:: kpick.instance_segmentation.maskrcnn_detectron2
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.instance\_segmentation.maskrcnn\_train module
+---------------------------------------------------
+
+.. automodule:: kpick.instance_segmentation.maskrcnn_train
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.instance_segmentation
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kpick.dataset package &mdash; Kpick 2.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Kpick
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Background:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/info.html">What is  Kpick?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/install.html">What is  Kpick?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html">What is  Kpick?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html#how-to-use">How to use?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html#how-to-contribute">How to contribute?</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kpick</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>kpick.dataset package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api_docs/kpick.dataset.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="kpick-dataset-package">
+<h1>kpick.dataset package<a class="headerlink" href="#kpick-dataset-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-kpick.dataset.coco">
+<span id="kpick-dataset-coco-module"></span><h2>kpick.dataset.coco module<a class="headerlink" href="#module-kpick.dataset.coco" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoGui">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.dataset.coco.</span></span><span class="sig-name descname"><span class="pre">CocoGui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoGui" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="kpick.base.html#kpick.base.base.DetGuiObj" title="kpick.base.base.DetGuiObj"><code class="xref py py-class docutils literal notranslate"><span class="pre">DetGuiObj</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoGui.augmentation_and_save">
+<span class="sig-name descname"><span class="pre">augmentation_and_save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_thread</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoGui.augmentation_and_save" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoGui.concat_anns">
+<span class="sig-name descname"><span class="pre">concat_anns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoGui.concat_anns" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoGui.finalize_acc">
+<span class="sig-name descname"><span class="pre">finalize_acc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoGui.finalize_acc" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoGui.gui_process_single">
+<span class="sig-name descname"><span class="pre">gui_process_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoGui.gui_process_single" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoGui.init_acc">
+<span class="sig-name descname"><span class="pre">init_acc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoGui.init_acc" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoGui.mask_to_coco">
+<span class="sig-name descname"><span class="pre">mask_to_coco</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoGui.mask_to_coco" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoGui.show_ann_single">
+<span class="sig-name descname"><span class="pre">show_ann_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoGui.show_ann_single" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.dataset.coco.</span></span><span class="sig-name descname"><span class="pre">CocoUtils</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ann_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.acc_augmentation_db">
+<span class="sig-name descname"><span class="pre">acc_augmentation_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_thread</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.acc_augmentation_db" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.acc_single_db">
+<span class="sig-name descname"><span class="pre">acc_single_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_thread</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.acc_single_db" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.aug_category">
+<span class="sig-name descname"><span class="pre">aug_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">category_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip_axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.aug_category" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.aug_mask">
+<span class="sig-name descname"><span class="pre">aug_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flip_axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.aug_mask" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.aug_single">
+<span class="sig-name descname"><span class="pre">aug_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_ims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.aug_single" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.augmentation">
+<span class="sig-name descname"><span class="pre">augmentation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ann_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bg_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.augmentation" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.binary_mask_to_rle">
+<span class="sig-name descname"><span class="pre">binary_mask_to_rle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binary_mask</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.binary_mask_to_rle" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.filename2Id">
+<span class="sig-name descname"><span class="pre">filename2Id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.filename2Id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.filename2Instances">
+<span class="sig-name descname"><span class="pre">filename2Instances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.filename2Instances" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.finalize_acc">
+<span class="sig-name descname"><span class="pre">finalize_acc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.finalize_acc" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.get_im_from_ind">
+<span class="sig-name descname"><span class="pre">get_im_from_ind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.get_im_from_ind" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.get_im_path">
+<span class="sig-name descname"><span class="pre">get_im_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.get_im_path" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.get_instance_from_ind">
+<span class="sig-name descname"><span class="pre">get_instance_from_ind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ind</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ann_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.get_instance_from_ind" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.init_acc">
+<span class="sig-name descname"><span class="pre">init_acc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_dirs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aug_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">supercategories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.init_acc" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.make_ann_categories">
+<span class="sig-name descname"><span class="pre">make_ann_categories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpt_labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpt_skeletons</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.make_ann_categories" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.make_ann_images">
+<span class="sig-name descname"><span class="pre">make_ann_images</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dict_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.make_ann_images" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.make_annotations">
+<span class="sig-name descname"><span class="pre">make_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ann_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keypoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annotations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.make_annotations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.make_categories">
+<span class="sig-name descname"><span class="pre">make_categories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">classes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">supercategories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.make_categories" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ann_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">images</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annotations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ann_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ann_license</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.save" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.segmToMask">
+<span class="sig-name descname"><span class="pre">segmToMask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.segmToMask" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.segmToRLE">
+<span class="sig-name descname"><span class="pre">segmToRLE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.segmToRLE" title="Permalink to this definition"></a></dt>
+<dd><p>Convert annotation which can be polygons, uncompressed RLE to RLE.
+:return: binary mask (numpy 2D array)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.show_ann_single">
+<span class="sig-name descname"><span class="pre">show_ann_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.show_ann_single" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.show_ims">
+<span class="sig-name descname"><span class="pre">show_ims</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'coco_viewer'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1080,</span> <span class="pre">720)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.show_ims" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.show_instances">
+<span class="sig-name descname"><span class="pre">show_instances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'coco_viewer'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1080,</span> <span class="pre">720)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.show_instances" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.split_trainval">
+<span class="sig-name descname"><span class="pre">split_trainval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">div</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(2,</span> <span class="pre">1)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.split_trainval" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.coco.CocoUtils.visualize_instance">
+<span class="sig-name descname"><span class="pre">visualize_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.CocoUtils.visualize_instance" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.dataset.coco.run_coco_augmentation">
+<span class="sig-prename descclassname"><span class="pre">kpick.dataset.coco.</span></span><span class="sig-name descname"><span class="pre">run_coco_augmentation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'imgs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ann_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ann.json'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.run_coco_augmentation" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.dataset.coco.run_coco_gui">
+<span class="sig-prename descclassname"><span class="pre">kpick.dataset.coco.</span></span><span class="sig-name descname"><span class="pre">run_coco_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgb_formats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_formats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.coco.run_coco_gui" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-kpick.dataset.cornell">
+<span id="kpick-dataset-cornell-module"></span><h2>kpick.dataset.cornell module<a class="headerlink" href="#module-kpick.dataset.cornell" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.CornellDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.dataset.cornell.</span></span><span class="sig-name descname"><span class="pre">CornellDataset</span></span><a class="headerlink" href="#kpick.dataset.cornell.CornellDataset" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.CornellDataset.get_instance">
+<span class="sig-name descname"><span class="pre">get_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbFilePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgb_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*r.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*d.tiff'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neg_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*cneg.txt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*cpos.txt'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.CornellDataset.get_instance" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.CornellDataset.get_poses">
+<span class="sig-name descname"><span class="pre">get_poses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.CornellDataset.get_poses" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.CornellDataset.infer_path">
+<span class="sig-name descname"><span class="pre">infer_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_format</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.CornellDataset.infer_path" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.CornellDataset.movePose5D">
+<span class="sig-name descname"><span class="pre">movePose5D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose5D</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.CornellDataset.movePose5D" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.CornellDataset.pose2Pose5D">
+<span class="sig-name descname"><span class="pre">pose2Pose5D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.CornellDataset.pose2Pose5D" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.CornellDataset.pose5D2pose">
+<span class="sig-name descname"><span class="pre">pose5D2pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose5D</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.CornellDataset.pose5D2pose" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.CornellDataset.show_apose">
+<span class="sig-name descname"><span class="pre">show_apose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neg_pose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.CornellDataset.show_apose" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.CornellDataset.show_instance">
+<span class="sig-name descname"><span class="pre">show_instance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbFilePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgb_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*r.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*d.tiff'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neg_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*cneg.txt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*cpos.txt'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.CornellDataset.show_instance" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.CornellDatasetGui">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.dataset.cornell.</span></span><span class="sig-name descname"><span class="pre">CornellDatasetGui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.CornellDatasetGui" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.dataset.cornell.CornellDataset" title="kpick.dataset.cornell.CornellDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">CornellDataset</span></code></a>, <a class="reference internal" href="kpick.base.html#kpick.base.base.DetGuiObj" title="kpick.base.base.DetGuiObj"><code class="xref py py-class docutils literal notranslate"><span class="pre">DetGuiObj</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.CornellDatasetGui.gui_process_single">
+<span class="sig-name descname"><span class="pre">gui_process_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.CornellDatasetGui.gui_process_single" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.CornellDatasetGui.show_poses">
+<span class="sig-name descname"><span class="pre">show_poses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.CornellDatasetGui.show_poses" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.CornellDatasetGui.show_positive_poses">
+<span class="sig-name descname"><span class="pre">show_positive_poses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.CornellDatasetGui.show_positive_poses" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.demo_cornell_gui">
+<span class="sig-prename descclassname"><span class="pre">kpick.dataset.cornell.</span></span><span class="sig-name descname"><span class="pre">demo_cornell_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.demo_cornell_gui" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.get_default_configs">
+<span class="sig-prename descclassname"><span class="pre">kpick.dataset.cornell.</span></span><span class="sig-name descname"><span class="pre">get_default_configs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.get_default_configs" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.dataset.cornell.test">
+<span class="sig-prename descclassname"><span class="pre">kpick.dataset.cornell.</span></span><span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.cornell.test" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-kpick.dataset.grip_via_dataset">
+<span id="kpick-dataset-grip-via-dataset-module"></span><h2>kpick.dataset.grip_via_dataset module<a class="headerlink" href="#module-kpick.dataset.grip_via_dataset" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.dataset.grip_via_dataset.GripViaAnnotation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.dataset.grip_via_dataset.</span></span><span class="sig-name descname"><span class="pre">GripViaAnnotation</span></span><a class="headerlink" href="#kpick.dataset.grip_via_dataset.GripViaAnnotation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.dataset.via_dataset.ViaAnnotation" title="kpick.dataset.via_dataset.ViaAnnotation"><code class="xref py py-class docutils literal notranslate"><span class="pre">ViaAnnotation</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.grip_via_dataset.GripViaAnnotation.draw_region">
+<span class="sig-name descname"><span class="pre">draw_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.grip_via_dataset.GripViaAnnotation.draw_region" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.grip_via_dataset.GripViaAnnotation.finalize_acc">
+<span class="sig-name descname"><span class="pre">finalize_acc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.grip_via_dataset.GripViaAnnotation.finalize_acc" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.grip_via_dataset.GripViaAnnotation.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ann_json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.grip_via_dataset.GripViaAnnotation.init" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.grip_via_dataset.GripViaAnnotation.init_acc">
+<span class="sig-name descname"><span class="pre">init_acc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.grip_via_dataset.GripViaAnnotation.init_acc" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.grip_via_dataset.GripViaAnnotation.make_db">
+<span class="sig-name descname"><span class="pre">make_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.grip_via_dataset.GripViaAnnotation.make_db" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.grip_via_dataset.GripViaAnnotation.to_train">
+<span class="sig-name descname"><span class="pre">to_train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_val_div</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.grip_via_dataset.GripViaAnnotation.to_train" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.dataset.grip_via_dataset.GripViaAnnotationGuiObj">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.dataset.grip_via_dataset.</span></span><span class="sig-name descname"><span class="pre">GripViaAnnotationGuiObj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.grip_via_dataset.GripViaAnnotationGuiObj" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.dataset.grip_via_dataset.GripViaAnnotation" title="kpick.dataset.grip_via_dataset.GripViaAnnotation"><code class="xref py py-class docutils literal notranslate"><span class="pre">GripViaAnnotation</span></code></a>, <a class="reference internal" href="kpick.base.html#kpick.base.base.DetGuiObj" title="kpick.base.base.DetGuiObj"><code class="xref py py-class docutils literal notranslate"><span class="pre">DetGuiObj</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.grip_via_dataset.GripViaAnnotationGuiObj.gui_process_single">
+<span class="sig-name descname"><span class="pre">gui_process_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.grip_via_dataset.GripViaAnnotationGuiObj.gui_process_single" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.dataset.grip_via_dataset.demo_grip_via_annocation_gui">
+<span class="sig-prename descclassname"><span class="pre">kpick.dataset.grip_via_dataset.</span></span><span class="sig-name descname"><span class="pre">demo_grip_via_annocation_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'configs/grip_via_annotation.cfg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'configs/default_via_annotation.cfg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgb_formats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_formats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.grip_via_dataset.demo_grip_via_annocation_gui" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.dataset.grip_via_dataset.get_grip_via_ann_default_args">
+<span class="sig-prename descclassname"><span class="pre">kpick.dataset.grip_via_dataset.</span></span><span class="sig-name descname"><span class="pre">get_grip_via_ann_default_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.grip_via_dataset.get_grip_via_ann_default_args" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-kpick.dataset.via_dataset">
+<span id="kpick-dataset-via-dataset-module"></span><h2>kpick.dataset.via_dataset module<a class="headerlink" href="#module-kpick.dataset.via_dataset" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.dataset.via_dataset.ViaAnnotation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.dataset.via_dataset.</span></span><span class="sig-name descname"><span class="pre">ViaAnnotation</span></span><a class="headerlink" href="#kpick.dataset.via_dataset.ViaAnnotation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.via_dataset.ViaAnnotation.draw_region">
+<span class="sig-name descname"><span class="pre">draw_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.via_dataset.ViaAnnotation.draw_region" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.via_dataset.ViaAnnotation.get_regions">
+<span class="sig-name descname"><span class="pre">get_regions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.via_dataset.ViaAnnotation.get_regions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.via_dataset.ViaAnnotation.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ann_json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.via_dataset.ViaAnnotation.init" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.via_dataset.ViaAnnotation.show_single_ann">
+<span class="sig-name descname"><span class="pre">show_single_ann</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.via_dataset.ViaAnnotation.show_single_ann" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.dataset.via_dataset.ViaAnnotationGuiObj">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.dataset.via_dataset.</span></span><span class="sig-name descname"><span class="pre">ViaAnnotationGuiObj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.via_dataset.ViaAnnotationGuiObj" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.dataset.via_dataset.ViaAnnotation" title="kpick.dataset.via_dataset.ViaAnnotation"><code class="xref py py-class docutils literal notranslate"><span class="pre">ViaAnnotation</span></code></a>, <a class="reference internal" href="kpick.base.html#kpick.base.base.DetGuiObj" title="kpick.base.base.DetGuiObj"><code class="xref py py-class docutils literal notranslate"><span class="pre">DetGuiObj</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.dataset.via_dataset.ViaAnnotationGuiObj.gui_process_single">
+<span class="sig-name descname"><span class="pre">gui_process_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.via_dataset.ViaAnnotationGuiObj.gui_process_single" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.dataset.via_dataset.demo_via_annocation_gui">
+<span class="sig-prename descclassname"><span class="pre">kpick.dataset.via_dataset.</span></span><span class="sig-name descname"><span class="pre">demo_via_annocation_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'configs/via_annotation.cfg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'configs/default_via_annotation.cfg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgb_formats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth_formats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.via_dataset.demo_via_annocation_gui" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.dataset.via_dataset.get_via_annotation_default_args">
+<span class="sig-prename descclassname"><span class="pre">kpick.dataset.via_dataset.</span></span><span class="sig-name descname"><span class="pre">get_via_annotation_default_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.dataset.via_dataset.get_via_annotation_default_args" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-kpick.dataset">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-kpick.dataset" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trung Bui.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

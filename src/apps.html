@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robotplus &mdash; Kpick 2.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="kpick" href="../api_docs/modules.html" />
+    <link rel="prev" title="Getting started with Kpick" href="getting_started.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Kpick
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Background:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="info.html">What is  Kpick?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html#pip-installation">Pip Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started with Kpick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html#avoiding-co-coding-conflicts">Avoiding co-coding conflicts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps Development:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Robotplus</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#copper-detection">1. Copper Detection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-and-load-detector">Create and Load Detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modify-and-load-detector">Modify and Load Detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo-on-single-rgb-d-image">Demo on single RGB-D image</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#cylind-detection">2. Cylind Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#oi-detection">3. OI Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#fpcb">FPCB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#mujin">Mujin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#order-picking">Order Picking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#kimchi">Kimchi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#smart-gripper">Smart Gripper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_docs/modules.html">kpick</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kpick</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Robotplus</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/src/apps.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>This document provides a brief intro of the usage of builtin functions and detectors designed for each App.</p>
+<section id="robotplus">
+<h1>Robotplus<a class="headerlink" href="#robotplus" title="Permalink to this heading"></a></h1>
+<section id="copper-detection">
+<h2>1. Copper Detection<a class="headerlink" href="#copper-detection" title="Permalink to this heading"></a></h2>
+<section id="create-and-load-detector">
+<h3>Create and Load Detector<a class="headerlink" href="#create-and-load-detector" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>Using the default Kpick’s detector</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.apps.robotplus.copper_detector</span> <span class="kn">import</span> <span class="n">create_and_load_copper_detector</span>
+<span class="n">detector</span> <span class="o">=</span> <span class="n">create_and_load_copper_detector</span><span class="p">(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">cfg_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>cfg_path</strong> is default <strong>kpick/apps/robotplus/configs/copper_grip.cfg when cfg_path</strong>  is None or not given</p>
+</div>
+</section>
+<section id="modify-and-load-detector">
+<h3>Modify and Load Detector<a class="headerlink" href="#modify-and-load-detector" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>Extending the default Kpick’s detector</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.apps.robotplus.copper_detector</span> <span class="kn">import</span>  <span class="n">CopperDetector</span><span class="p">,</span> <span class="n">create_and_load_copper_detector</span>
+<span class="k">class</span> <span class="nc">AppDector</span><span class="p">(</span><span class="n">CopperDetector</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">new_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;new function&#39;</span><span class="p">)</span>
+
+<span class="n">detector</span> <span class="o">=</span> <span class="n">create_and_load_copper_detector</span><span class="p">(</span><span class="n">Detector</span><span class="o">=</span><span class="n">AppDector</span><span class="p">,</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">cfg_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="demo-on-single-rgb-d-image">
+<h3>Demo on single RGB-D image<a class="headerlink" href="#demo-on-single-rgb-d-image" title="Permalink to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">demo_detect_copper_single</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">cv2</span>
+    <span class="kn">import</span> <span class="nn">kpick</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">from</span> <span class="nn">ketisdk.vision.utils.rgbd_utils_v2</span> <span class="kn">import</span> <span class="n">RGBD</span>
+
+    <span class="n">KPICK_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">kpick</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># configs</span>
+    <span class="n">depth_min</span> <span class="o">=</span> <span class="mi">900</span>
+    <span class="n">depth_max</span> <span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">workspace</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">530</span><span class="p">,</span> <span class="mi">278</span><span class="p">),</span> <span class="p">(</span><span class="mi">1252</span><span class="p">,</span> <span class="mi">286</span><span class="p">),</span> <span class="p">(</span><span class="mi">1248</span><span class="p">,</span> <span class="mi">714</span><span class="p">),</span> <span class="p">(</span><span class="mi">536</span><span class="p">,</span> <span class="mi">704</span><span class="p">)]</span>
+
+    <span class="c1"># load image</span>
+    <span class="n">rgb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">KPICK_DIR</span><span class="p">,</span> <span class="s1">&#39;apps/robotplus/test_images/copper01_rgb.png&#39;</span><span class="p">))[:,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">depth</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">KPICK_DIR</span><span class="p">,</span> <span class="s1">&#39;apps/robotplus/test_images/copper01_depth.png&#39;</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span>
+    <span class="n">rgbd</span> <span class="o">=</span> <span class="n">RGBD</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="n">rgb</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">depth_min</span><span class="o">=</span><span class="n">depth_min</span><span class="p">,</span> <span class="n">depth_max</span><span class="o">=</span><span class="n">depth_max</span><span class="p">)</span>
+    <span class="n">rgbd</span><span class="o">.</span><span class="n">set_workspace</span><span class="p">(</span><span class="n">pts</span><span class="o">=</span><span class="n">workspace</span><span class="p">)</span>
+
+    <span class="c1"># load model</span>
+    <span class="n">detector</span> <span class="o">=</span> <span class="n">create_and_load_copper_detector</span><span class="p">()</span>
+
+    <span class="c1"># predict</span>
+    <span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">show_steps</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">detect_and_show_grips</span><span class="p">(</span><span class="n">rgbd</span><span class="o">=</span><span class="n">rgbd</span><span class="p">,</span> <span class="n">net_args</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">grip_net</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="c1"># show</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;reviewer&#39;</span><span class="p">,</span> <span class="n">ret</span><span class="p">[</span><span class="s1">&#39;im&#39;</span><span class="p">][:,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="cylind-detection">
+<h2>2. Cylind Detection<a class="headerlink" href="#cylind-detection" title="Permalink to this heading"></a></h2>
+</section>
+<section id="oi-detection">
+<h2>3. OI Detection<a class="headerlink" href="#oi-detection" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+<section id="fpcb">
+<h1>FPCB<a class="headerlink" href="#fpcb" title="Permalink to this heading"></a></h1>
+</section>
+<section id="mujin">
+<h1>Mujin<a class="headerlink" href="#mujin" title="Permalink to this heading"></a></h1>
+</section>
+<section id="order-picking">
+<h1>Order Picking<a class="headerlink" href="#order-picking" title="Permalink to this heading"></a></h1>
+</section>
+<section id="kimchi">
+<h1>Kimchi<a class="headerlink" href="#kimchi" title="Permalink to this heading"></a></h1>
+</section>
+<section id="smart-gripper">
+<h1>Smart Gripper<a class="headerlink" href="#smart-gripper" title="Permalink to this heading"></a></h1>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting started with Kpick" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../api_docs/modules.html" class="btn btn-neutral float-right" title="kpick" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trung Bui.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

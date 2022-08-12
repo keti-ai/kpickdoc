@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kpick.classifier.classification_utils package &mdash; Kpick 2.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="kpick.classifier.classification_utils.progress package" href="kpick.classifier.classification_utils.progress.html" />
+    <link rel="prev" title="kpick.classifier.cifar_classification_models package" href="kpick.classifier.cifar_classification_models.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Kpick
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Background:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/info.html">What is  Kpick?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/install.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/install.html#pip-installation">Pip Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html">Getting started with Kpick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html#avoiding-co-coding-conflicts">Avoiding co-coding conflicts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps Development:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html">Robotplus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#fpcb">FPCB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#mujin">Mujin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#order-picking">Order Picking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#kimchi">Kimchi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#smart-gripper">Smart Gripper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">kpick</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="kpick.html">kpick package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="kpick.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.html">kpick.apps package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.base.html">kpick.base package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="kpick.classifier.html">kpick.classifier package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.dataset.html">kpick.dataset package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.instance_segmentation.html">kpick.instance_segmentation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.matching.html">kpick.matching package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.object_detection.html">kpick.object_detection package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.html">kpick.pick package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pose_estimation.html">kpick.pose_estimation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.segmentation.html">kpick.segmentation package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.html#module-kpick.detector_base">kpick.detector_base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.html#module-kpick.detectron2_detector">kpick.detectron2_detector module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.html#module-kpick">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kpick</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">kpick</a> &raquo;</li>
+          <li><a href="kpick.html">kpick package</a> &raquo;</li>
+          <li><a href="kpick.classifier.html">kpick.classifier package</a> &raquo;</li>
+      <li>kpick.classifier.classification_utils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api_docs/kpick.classifier.classification_utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="kpick-classifier-classification-utils-package">
+<h1>kpick.classifier.classification_utils package<a class="headerlink" href="#kpick-classifier-classification-utils-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kpick.classifier.classification_utils.progress.html">kpick.classifier.classification_utils.progress package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kpick.classifier.classification_utils.progress.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kpick.classifier.classification_utils.progress.progress.html">kpick.classifier.classification_utils.progress.progress package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.classification_utils.progress.progress.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.classification_utils.progress.progress.html#module-kpick.classifier.classification_utils.progress.progress.bar">kpick.classifier.classification_utils.progress.progress.bar module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.classification_utils.progress.progress.html#module-kpick.classifier.classification_utils.progress.progress.counter">kpick.classifier.classification_utils.progress.progress.counter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.classification_utils.progress.progress.html#module-kpick.classifier.classification_utils.progress.progress.helpers">kpick.classifier.classification_utils.progress.progress.helpers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.classification_utils.progress.progress.html#module-kpick.classifier.classification_utils.progress.progress.spinner">kpick.classifier.classification_utils.progress.progress.spinner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.classification_utils.progress.progress.html#module-kpick.classifier.classification_utils.progress.progress">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.classifier.classification_utils.progress.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.classifier.classification_utils.progress.html#kpick-classifier-classification-utils-progress-setup-module">kpick.classifier.classification_utils.progress.setup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.classifier.classification_utils.progress.html#kpick-classifier-classification-utils-progress-test-progress-module">kpick.classifier.classification_utils.progress.test_progress module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.classifier.classification_utils.progress.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-kpick.classifier.classification_utils.eval">
+<span id="kpick-classifier-classification-utils-eval-module"></span><h2>kpick.classifier.classification_utils.eval module<a class="headerlink" href="#module-kpick.classifier.classification_utils.eval" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.eval.accuracy">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.eval.</span></span><span class="sig-name descname"><span class="pre">accuracy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.eval.accuracy" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the precision&#64;k for the specified values of k</p>
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.classification_utils.logger">
+<span id="kpick-classifier-classification-utils-logger-module"></span><h2>kpick.classifier.classification_utils.logger module<a class="headerlink" href="#module-kpick.classifier.classification_utils.logger" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.logger.Logger">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.logger.</span></span><span class="sig-name descname"><span class="pre">Logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.logger.Logger" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Save training process to log file with simple plot function.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.logger.Logger.append">
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numbers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.logger.Logger.append" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.logger.Logger.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.logger.Logger.close" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.logger.Logger.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.logger.Logger.plot" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.logger.Logger.set_names">
+<span class="sig-name descname"><span class="pre">set_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.logger.Logger.set_names" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.logger.LoggerMonitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.logger.</span></span><span class="sig-name descname"><span class="pre">LoggerMonitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paths</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.logger.LoggerMonitor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Load and visualize multiple logs.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.logger.LoggerMonitor.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.logger.LoggerMonitor.plot" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.logger.savefig">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.logger.</span></span><span class="sig-name descname"><span class="pre">savefig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.logger.savefig" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-kpick.classifier.classification_utils.misc">
+<span id="kpick-classifier-classification-utils-misc-module"></span><h2>kpick.classifier.classification_utils.misc module<a class="headerlink" href="#module-kpick.classifier.classification_utils.misc" title="Permalink to this heading"></a></h2>
+<p>Some helper functions for PyTorch, including:
+- get_mean_and_std: calculate the mean and std value of dataset.
+- msr_init: net parameter initialization.
+- progress_bar: progress bar mimic xlua.progress.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.misc.AverageMeter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.misc.</span></span><span class="sig-name descname"><span class="pre">AverageMeter</span></span><a class="headerlink" href="#kpick.classifier.classification_utils.misc.AverageMeter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Computes and stores the average and current value
+Imported from <a class="reference external" href="https://github.com/pytorch/examples/blob/master/imagenet/main.py#L247-L262">https://github.com/pytorch/examples/blob/master/imagenet/main.py#L247-L262</a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.misc.AverageMeter.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.misc.AverageMeter.reset" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.misc.AverageMeter.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.misc.AverageMeter.update" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.misc.get_mean_and_std">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.misc.</span></span><span class="sig-name descname"><span class="pre">get_mean_and_std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.misc.get_mean_and_std" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the mean and std value of dataset.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.misc.init_params">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.misc.</span></span><span class="sig-name descname"><span class="pre">init_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">net</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.misc.init_params" title="Permalink to this definition"></a></dt>
+<dd><p>Init layer parameters.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.misc.mkdir_p">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.misc.</span></span><span class="sig-name descname"><span class="pre">mkdir_p</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.misc.mkdir_p" title="Permalink to this definition"></a></dt>
+<dd><p>make dir if not exist</p>
+</dd></dl>
+
+</section>
+<section id="module-kpick.classifier.classification_utils.visualize">
+<span id="kpick-classifier-classification-utils-visualize-module"></span><h2>kpick.classifier.classification_utils.visualize module<a class="headerlink" href="#module-kpick.classifier.classification_utils.visualize" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.visualize.make_image">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.visualize.</span></span><span class="sig-name descname"><span class="pre">make_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.visualize.make_image" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.visualize.show_batch">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.visualize.</span></span><span class="sig-name descname"><span class="pre">show_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">images</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(2,</span> <span class="pre">2,</span> <span class="pre">2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Std</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.visualize.show_batch" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.visualize.show_mask">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.visualize.</span></span><span class="sig-name descname"><span class="pre">show_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">images</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masklist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(2,</span> <span class="pre">2,</span> <span class="pre">2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Std</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.visualize.show_mask" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.classifier.classification_utils.visualize.show_mask_single">
+<span class="sig-prename descclassname"><span class="pre">kpick.classifier.classification_utils.visualize.</span></span><span class="sig-name descname"><span class="pre">show_mask_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">images</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(2,</span> <span class="pre">2,</span> <span class="pre">2)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Std</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5,</span> <span class="pre">0.5)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.classifier.classification_utils.visualize.show_mask_single" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-kpick.classifier.classification_utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-kpick.classifier.classification_utils" title="Permalink to this heading"></a></h2>
+<p>Useful utils</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="kpick.classifier.cifar_classification_models.html" class="btn btn-neutral float-left" title="kpick.classifier.cifar_classification_models package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="kpick.classifier.classification_utils.progress.html" class="btn btn-neutral float-right" title="kpick.classifier.classification_utils.progress package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trung Bui.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+kpick.segmentation package
+==========================
+
+Submodules
+----------
+
+kpick.segmentation.segmentation\_base module
+--------------------------------------------
+
+.. automodule:: kpick.segmentation.segmentation_base
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.segmentation
+   :members:
+   :undoc-members:
+   :show-inheritance:

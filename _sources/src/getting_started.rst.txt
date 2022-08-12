@@ -1,0 +1,26 @@
+Getting started with Kpick
+-----------------
+This document provides a brief intro of the usage of builtin command-line tools in Kpick.
+
+
+1. Create and Load Detector - Using the default Kpick's detector
+=====================================
+
+2. Demo on single Image
+=====================================
+
+3. Demo on the developing GUI
+=====================================
+
+4. Training and evaluation
+=====================================
+
+Avoiding co-coding conflicts
+----------------------------
+* Avoiding modification directly on the core KPICK functions or class.
+* Inheriting the target class and define or re-define function for purposes of each project.
+
+
+
+
+

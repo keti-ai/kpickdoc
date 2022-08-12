@@ -1,0 +1,49 @@
+kpick.pick package
+==================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   kpick.pick.dataset
+   kpick.pick.grip
+   kpick.pick.grip3
+   kpick.pick.grip_inner
+   kpick.pick.suction
+
+Submodules
+----------
+
+kpick.pick.base\_grasp\_detection module
+----------------------------------------
+
+.. automodule:: kpick.pick.base_grasp_detection
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.pick.grip\_suction\_detector module
+-----------------------------------------
+
+.. automodule:: kpick.pick.grip_suction_detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+kpick.pick.train module
+-----------------------
+
+.. automodule:: kpick.pick.train
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.pick
+   :members:
+   :undoc-members:
+   :show-inheritance:

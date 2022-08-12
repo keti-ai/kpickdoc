@@ -1,0 +1,21 @@
+kpick.pose\_estimation package
+==============================
+
+Submodules
+----------
+
+kpick.pose\_estimation.pose\_xyz module
+---------------------------------------
+
+.. automodule:: kpick.pose_estimation.pose_xyz
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.pose_estimation
+   :members:
+   :undoc-members:
+   :show-inheritance:

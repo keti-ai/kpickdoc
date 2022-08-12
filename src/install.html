@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prerequisites &mdash; Kpick 2.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting started with Kpick" href="getting_started.html" />
+    <link rel="prev" title="What is Kpick?" href="info.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Kpick
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Background:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="info.html">What is  Kpick?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation Guide:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Prerequisites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubuntu">Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cuda-and-cuddnn">CUDA and CUDDNN</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-nvidia-driver">1. Install NVIDIA driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-cuda">2. Install CUDA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-cudnn">3. Install CUDNN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-cuda-path">4. Set up CUDA path</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#virtualenv">Virtualenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#pip-installation">Pip Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-keti-sdk">1. Install KETI SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-kpick">2. Install Kpick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avoid-conflicts">3. Avoid conflicts</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started with Kpick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html#avoiding-co-coding-conflicts">Avoiding co-coding conflicts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api_docs/modules.html">kpick</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kpick</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Prerequisites</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/src/install.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="prerequisites">
+<h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h1>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this heading"></a></h2>
+<p>Kpick has been tested with Python3 (verion&gt;=3.6)</p>
+</section>
+<section id="ubuntu">
+<h2>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this heading"></a></h2>
+<p>Kpick  has been tested with Ubuntu 16.04 and 18.04</p>
+</section>
+<section id="cuda-and-cuddnn">
+<h2>CUDA and CUDDNN<a class="headerlink" href="#cuda-and-cuddnn" title="Permalink to this heading"></a></h2>
+<p>Kpick  has been tested with CUDA &gt;= 10.0 and CUDNN&gt;=7</p>
+<section id="install-nvidia-driver">
+<h3>1. Install NVIDIA driver<a class="headerlink" href="#install-nvidia-driver" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>check GPU info</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">lshw</span> <span class="o">-</span><span class="n">C</span> <span class="n">display</span> <span class="ow">or</span> <span class="n">hwinfo</span> <span class="o">--</span><span class="n">gfxcard</span> <span class="o">--</span><span class="n">short</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="p">:</span><span class="n">graphics</span><span class="o">-</span><span class="n">drivers</span><span class="o">/</span><span class="n">ppa</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">reboot</span>
+</pre></div>
+</div>
+</li>
+<li><p>Open ‘Software and update/ Addtional Drivers’ and select proper driver</p></li>
+</ul>
+<p>reboot</p>
+</section>
+<section id="install-cuda">
+<h3>2. Install CUDA<a class="headerlink" href="#install-cuda" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>Download <a href="#id1"><span class="problematic" id="id2">*</span></a>.run file from <a class="reference external" href="https://developer.nvidia.com/cuda-toolkit-archive">Cuda archive</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">sh</span> <span class="n">cuda_XXX</span><span class="o">.</span><span class="n">run</span>
+</pre></div>
+</div>
+</li>
+<li><p>Follow the command line promts:</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Answer ‘NO’ for question “Install NVIDIA Accelerated Graphics Driver for Linux-XXX?”</p>
+</div>
+</section>
+<section id="install-cudnn">
+<h3>3. Install CUDNN<a class="headerlink" href="#install-cudnn" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>Download CUDNN from <a class="reference external" href="https://developer.nvidia.com/rdp/cudnn-archive">Cudnn archive</a></p></li>
+<li><p>Extract tar file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">cp</span> <span class="o">/</span><span class="n">cuda</span><span class="o">/</span><span class="n">include</span><span class="o">/*</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">loca</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="n">XX</span><span class="o">/</span><span class="n">include</span>
+<span class="n">sudo</span> <span class="n">cp</span> <span class="o">/</span><span class="n">cuda</span><span class="o">/</span><span class="n">lib64</span><span class="o">/*</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="n">XX</span><span class="o">/</span><span class="n">lib64</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="set-up-cuda-path">
+<h3>4. Set up CUDA path<a class="headerlink" href="#set-up-cuda-path" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>Open bashrc in sudo mode</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">gedit</span> <span class="o">~/.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add 2 lines to the file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PATH=/usr/local/cuda/bin:$PATH
+LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+</pre></div>
+</div>
+</li>
+<li><p>Activate changes</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span>  <span class="o">~/.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create cuda configuration file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">gedit</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ld</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">cuda</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add: /usr/local/cuda/lib64 into file</p></li>
+<li><p>Active configuration</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ldconfig</span>
+</pre></div>
+</div>
+</li>
+<li><p>Reboot system</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reboot</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="virtualenv">
+<h2>Virtualenv<a class="headerlink" href="#virtualenv" title="Permalink to this heading"></a></h2>
+<p>We highly recommend using a Python environment management system, in particular Virtualenv.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">virtualenv</span> <span class="n">venv</span> <span class="o">--</span><span class="n">python</span><span class="o">=</span><span class="n">python3</span><span class="mf">.6</span>
+<span class="n">source</span> <span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+</section>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/keti-ai/kpick-devel">Pytorch</a> &gt; 1.4.0</p></li>
+</ul>
+<ul>
+<li><p>Cython</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Cython</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="pip-installation">
+<h1>Pip Installation<a class="headerlink" href="#pip-installation" title="Permalink to this heading"></a></h1>
+<section id="install-keti-sdk">
+<h2>1. Install KETI SDK<a class="headerlink" href="#install-keti-sdk" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">keti</span><span class="o">-</span><span class="n">ai</span><span class="o">/</span><span class="n">ketisdk</span>
+<span class="n">cd</span> <span class="n">ketisdk</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="install-kpick">
+<h2>2. Install Kpick<a class="headerlink" href="#install-kpick" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">keti</span><span class="o">-</span><span class="n">ai</span><span class="o">/</span><span class="n">kpick</span><span class="o">-</span><span class="n">devel</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">kpick</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="avoid-conflicts">
+<h2>3. Avoid conflicts<a class="headerlink" href="#avoid-conflicts" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">avoid</span> <span class="n">conflicts</span><span class="p">,</span> <span class="n">each</span> <span class="n">package</span> <span class="n">should</span> <span class="n">NOT</span> <span class="n">INCLUDE</span> <span class="n">by</span> <span class="n">each</span> <span class="n">other</span><span class="o">.</span>
+<span class="n">Please</span> <span class="n">use</span> <span class="s2">&quot;ip install -e .&quot;</span> <span class="n">instead</span> <span class="k">for</span> <span class="n">make</span> <span class="n">a</span> <span class="n">soft</span> <span class="n">link</span> <span class="n">to</span> <span class="n">a</span> <span class="n">package</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="info.html" class="btn btn-neutral float-left" title="What is Kpick?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="getting_started.html" class="btn btn-neutral float-right" title="Getting started with Kpick" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trung Bui.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

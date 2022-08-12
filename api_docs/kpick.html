@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kpick package &mdash; Kpick 2.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="kpick.apps package" href="kpick.apps.html" />
+    <link rel="prev" title="kpick" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Kpick
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Background:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/info.html">What is  Kpick?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/install.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/install.html#pip-installation">Pip Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html">Getting started with Kpick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html#avoiding-co-coding-conflicts">Avoiding co-coding conflicts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps Development:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html">Robotplus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#fpcb">FPCB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#mujin">Mujin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#order-picking">Order Picking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#kimchi">Kimchi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#smart-gripper">Smart Gripper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">kpick</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">kpick package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.html">kpick.apps package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.base.html">kpick.base package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.html">kpick.classifier package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.dataset.html">kpick.dataset package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.instance_segmentation.html">kpick.instance_segmentation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.matching.html">kpick.matching package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.object_detection.html">kpick.object_detection package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.html">kpick.pick package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pose_estimation.html">kpick.pose_estimation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.segmentation.html">kpick.segmentation package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-kpick.detector_base">kpick.detector_base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-kpick.detectron2_detector">kpick.detectron2_detector module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-kpick">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Kpick</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">kpick</a> &raquo;</li>
+      <li>kpick package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api_docs/kpick.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="kpick-package">
+<h1>kpick package<a class="headerlink" href="#kpick-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kpick.apps.html">kpick.apps package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kpick.apps.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kpick.apps.dataset.html">kpick.apps.dataset package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.dataset.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.dataset.html#kpick-apps-dataset-common-object-coco-module">kpick.apps.dataset.common_object_coco module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.dataset.html#module-kpick.apps.dataset">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.apps.kimchi.html">kpick.apps.kimchi package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.kimchi.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.kimchi.html#module-kpick.apps.kimchi.kimchi_mask_angle_detector">kpick.apps.kimchi.kimchi_mask_angle_detector module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.kimchi.html#module-kpick.apps.kimchi">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.apps.mujin.html">kpick.apps.mujin package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.mujin.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.mujin.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.mujin.html#kpick-apps-mujin-demo-module">kpick.apps.mujin.demo module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.mujin.html#kpick-apps-mujin-detector-module">kpick.apps.mujin.detector module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.mujin.html#module-kpick.apps.mujin">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.apps.orderpicking.html">kpick.apps.orderpicking package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.orderpicking.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.orderpicking.html#kpick-apps-orderpicking-detector-module">kpick.apps.orderpicking.detector module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.orderpicking.html#module-kpick.apps.orderpicking">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.apps.robotplus.html">kpick.apps.robotplus package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.robotplus.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.robotplus.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.robotplus.html#kpick-apps-robotplus-copper-detector-module">kpick.apps.robotplus.copper_detector module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.robotplus.html#kpick-apps-robotplus-detector-module">kpick.apps.robotplus.detector module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.robotplus.html#module-kpick.apps.robotplus.halcon_pose_estimator">kpick.apps.robotplus.halcon_pose_estimator module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.robotplus.html#kpick-apps-robotplus-oi-detector-module">kpick.apps.robotplus.oi_detector module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.robotplus.html#kpick-apps-robotplus-small-copper-detector-module">kpick.apps.robotplus.small_copper_detector module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.robotplus.html#module-kpick.apps.robotplus.test_matching2d">kpick.apps.robotplus.test_matching2d module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.robotplus.html#module-kpick.apps.robotplus">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.apps.samples.html">kpick.apps.samples package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.samples.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.samples.html#kpick-apps-samples-demo-client-gui-module">kpick.apps.samples.demo_client_gui module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.samples.html#module-kpick.apps.samples.demo_grip">kpick.apps.samples.demo_grip module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.samples.html#kpick-apps-samples-demo-module-combine-module">kpick.apps.samples.demo_module_combine module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.samples.html#module-kpick.apps.samples.demo_picking">kpick.apps.samples.demo_picking module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.samples.html#module-kpick.apps.samples.demo_suction">kpick.apps.samples.demo_suction module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.samples.html#module-kpick.apps.samples.run_sensors">kpick.apps.samples.run_sensors module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.samples.html#module-kpick.apps.samples.select_sample">kpick.apps.samples.select_sample module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.samples.html#module-kpick.apps.samples">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.apps.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.apps.html#module-kpick.apps.test">kpick.apps.test module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.apps.html#module-kpick.apps">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kpick.base.html">kpick.base package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kpick.base.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.base.html#module-kpick.base.base">kpick.base.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.base.html#module-kpick.base">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kpick.classifier.html">kpick.classifier package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kpick.classifier.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kpick.classifier.cifar_classification_models.html">kpick.classifier.cifar_classification_models package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.cifar_classification_models.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.cifar_classification_models.html#module-kpick.classifier.cifar_classification_models.alexnet">kpick.classifier.cifar_classification_models.alexnet module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.cifar_classification_models.html#module-kpick.classifier.cifar_classification_models.densenet">kpick.classifier.cifar_classification_models.densenet module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.cifar_classification_models.html#module-kpick.classifier.cifar_classification_models.preresnet">kpick.classifier.cifar_classification_models.preresnet module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.cifar_classification_models.html#module-kpick.classifier.cifar_classification_models.resnet">kpick.classifier.cifar_classification_models.resnet module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.cifar_classification_models.html#module-kpick.classifier.cifar_classification_models.resnet_roi">kpick.classifier.cifar_classification_models.resnet_roi module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.cifar_classification_models.html#module-kpick.classifier.cifar_classification_models.resnext">kpick.classifier.cifar_classification_models.resnext module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.cifar_classification_models.html#module-kpick.classifier.cifar_classification_models.vgg">kpick.classifier.cifar_classification_models.vgg module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.cifar_classification_models.html#module-kpick.classifier.cifar_classification_models.wrn">kpick.classifier.cifar_classification_models.wrn module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.cifar_classification_models.html#module-kpick.classifier.cifar_classification_models">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.classifier.classification_utils.html">kpick.classifier.classification_utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.classification_utils.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.classification_utils.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.classification_utils.html#module-kpick.classifier.classification_utils.eval">kpick.classifier.classification_utils.eval module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.classification_utils.html#module-kpick.classifier.classification_utils.logger">kpick.classifier.classification_utils.logger module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.classification_utils.html#module-kpick.classifier.classification_utils.misc">kpick.classifier.classification_utils.misc module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.classification_utils.html#module-kpick.classifier.classification_utils.visualize">kpick.classifier.classification_utils.visualize module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.classification_utils.html#module-kpick.classifier.classification_utils">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.classifier.models.html">kpick.classifier.models package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.models.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.models.html#module-kpick.classifier.models.mobilenet">kpick.classifier.models.mobilenet module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.models.html#module-kpick.classifier.models.resnet">kpick.classifier.models.resnet module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.classifier.models.html#module-kpick.classifier.models">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.classifier.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.classifier.html#module-kpick.classifier.basic_classification_models">kpick.classifier.basic_classification_models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.classifier.html#module-kpick.classifier.classifier_base">kpick.classifier.classifier_base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.classifier.html#module-kpick.classifier.classifier_base_org">kpick.classifier.classifier_base_org module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.classifier.html#module-kpick.classifier.roi_classifier">kpick.classifier.roi_classifier module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.classifier.html#module-kpick.classifier">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kpick.dataset.html">kpick.dataset package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kpick.dataset.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.dataset.html#module-kpick.dataset.coco">kpick.dataset.coco module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.dataset.html#module-kpick.dataset.cornell">kpick.dataset.cornell module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.dataset.html#module-kpick.dataset.grip_via_dataset">kpick.dataset.grip_via_dataset module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.dataset.html#module-kpick.dataset.via_dataset">kpick.dataset.via_dataset module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.dataset.html#module-kpick.dataset">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kpick.instance_segmentation.html">kpick.instance_segmentation package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kpick.instance_segmentation.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kpick.instance_segmentation.configs.html">kpick.instance_segmentation.configs package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.instance_segmentation.configs.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.instance_segmentation.configs.html#module-kpick.instance_segmentation.configs.mask_rcnn_x101_64x4d_fpn_1x_grasp">kpick.instance_segmentation.configs.mask_rcnn_x101_64x4d_fpn_1x_grasp module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.instance_segmentation.configs.html#module-kpick.instance_segmentation.configs">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.instance_segmentation.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.instance_segmentation.html#module-kpick.instance_segmentation.maskrcnn_detectron2">kpick.instance_segmentation.maskrcnn_detectron2 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.instance_segmentation.html#module-kpick.instance_segmentation.maskrcnn_train">kpick.instance_segmentation.maskrcnn_train module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.instance_segmentation.html#module-kpick.instance_segmentation">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kpick.matching.html">kpick.matching package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kpick.matching.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kpick.matching.qatm.html">kpick.matching.qatm package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.matching.qatm.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.matching.qatm.html#module-kpick.matching.qatm.QATMer">kpick.matching.qatm.QATMer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.matching.qatm.html#module-kpick.matching.qatm.qatm">kpick.matching.qatm.qatm module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.matching.qatm.html#module-kpick.matching.qatm.utils">kpick.matching.qatm.utils module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.matching.qatm.html#module-kpick.matching.qatm">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.matching.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.matching.html#module-kpick.matching.matching2d">kpick.matching.matching2d module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.matching.html#module-kpick.matching">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kpick.object_detection.html">kpick.object_detection package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kpick.object_detection.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.object_detection.html#module-kpick.object_detection.demo">kpick.object_detection.demo module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.object_detection.html#module-kpick.object_detection.install">kpick.object_detection.install module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.object_detection.html#module-kpick.object_detection.model">kpick.object_detection.model module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.object_detection.html#module-kpick.object_detection.nanodet_detector">kpick.object_detection.nanodet_detector module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.object_detection.html#module-kpick.object_detection.test">kpick.object_detection.test module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.object_detection.html#module-kpick.object_detection">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kpick.pick.html">kpick.pick package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kpick.pick.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kpick.pick.dataset.html">kpick.pick.dataset package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.dataset.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.dataset.html#kpick-pick-dataset-dataset-module">kpick.pick.dataset.dataset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.dataset.html#kpick-pick-dataset-grasp-cifar10-dber-module">kpick.pick.dataset.grasp_cifar10_dber module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.dataset.html#kpick-pick-dataset-grip-cifar10-dber-module">kpick.pick.dataset.grip_cifar10_dber module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.dataset.html#kpick-pick-dataset-suction-cifar10-dber-module">kpick.pick.dataset.suction_cifar10_dber module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.dataset.html#module-kpick.pick.dataset">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.pick.grip.html">kpick.pick.grip package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.grip.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.grip.html#kpick-pick-grip-grip-detection-module">kpick.pick.grip.grip_detection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.grip.html#module-kpick.pick.grip.grip_proposing">kpick.pick.grip.grip_proposing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.grip.html#module-kpick.pick.grip">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.pick.grip3.html">kpick.pick.grip3 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.grip3.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.grip3.html#kpick-pick-grip3-grip-3fingers-module">kpick.pick.grip3.grip_3fingers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.grip3.html#module-kpick.pick.grip3">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.pick.grip_inner.html">kpick.pick.grip_inner package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.grip_inner.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.grip_inner.html#kpick-pick-grip-inner-grip-inner-module">kpick.pick.grip_inner.grip_inner module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.grip_inner.html#kpick-pick-grip-inner-inner-grip-detector-module">kpick.pick.grip_inner.inner_grip_detector module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.grip_inner.html#module-kpick.pick.grip_inner">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.pick.suction.html">kpick.pick.suction package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.suction.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.suction.html#kpick-pick-suction-suction-detection-module">kpick.pick.suction.suction_detection module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.suction.html#module-kpick.pick.suction">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.pick.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.pick.html#kpick-pick-base-grasp-detection-module">kpick.pick.base_grasp_detection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.pick.html#kpick-pick-grip-suction-detector-module">kpick.pick.grip_suction_detector module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.pick.html#kpick-pick-train-module">kpick.pick.train module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.pick.html#module-kpick.pick">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kpick.pose_estimation.html">kpick.pose_estimation package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kpick.pose_estimation.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.pose_estimation.html#module-kpick.pose_estimation.pose_xyz">kpick.pose_estimation.pose_xyz module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.pose_estimation.html#module-kpick.pose_estimation">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kpick.segmentation.html">kpick.segmentation package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kpick.segmentation.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.segmentation.html#module-kpick.segmentation.segmentation_base">kpick.segmentation.segmentation_base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kpick.segmentation.html#module-kpick.segmentation">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-kpick.detector_base">
+<span id="kpick-detector-base-module"></span><h2>kpick.detector_base module<a class="headerlink" href="#module-kpick.detector_base" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.detector_base.BaseDetector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.detector_base.</span></span><span class="sig-name descname"><span class="pre">BaseDetector</span></span><a class="headerlink" href="#kpick.detector_base.BaseDetector" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detector_base.BaseDetector.get_model">
+<span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detector_base.BaseDetector.get_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detector_base.BaseDetector.predict_array">
+<span class="sig-name descname"><span class="pre">predict_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">anArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">need_rot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lefttop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detector_base.BaseDetector.predict_array" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detector_base.BaseDetector.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detector_base.BaseDetector.run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detector_base.BaseDetector.show_boxes">
+<span class="sig-name descname"><span class="pre">show_boxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boxes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_thick</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_thick</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detector_base.BaseDetector.show_boxes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detector_base.BaseDetector.show_keypoint_inst">
+<span class="sig-name descname"><span class="pre">show_keypoint_inst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skeleton</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detector_base.BaseDetector.show_keypoint_inst" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detector_base.BaseDetector.show_keypoints">
+<span class="sig-name descname"><span class="pre">show_keypoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keypoints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skeleton</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detector_base.BaseDetector.show_keypoints" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detector_base.BaseDetector.show_mask">
+<span class="sig-name descname"><span class="pre">show_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detector_base.BaseDetector.show_mask" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detector_base.BaseDetector.show_predict">
+<span class="sig-name descname"><span class="pre">show_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpt_skeleton</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_thick</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text_thick</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marker_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detector_base.BaseDetector.show_predict" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detector_base.BaseDetector.uncrop_predict">
+<span class="sig-name descname"><span class="pre">uncrop_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">im_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detector_base.BaseDetector.uncrop_predict" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-kpick.detectron2_detector">
+<span id="kpick-detectron2-detector-module"></span><h2>kpick.detectron2_detector module<a class="headerlink" href="#module-kpick.detectron2_detector" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.detectron2_detector.BaseDetectron">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.detectron2_detector.</span></span><span class="sig-name descname"><span class="pre">BaseDetectron</span></span><a class="headerlink" href="#kpick.detectron2_detector.BaseDetectron" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detectron2_detector.BaseDetectron.get_model">
+<span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_cfg_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detectron2_detector.BaseDetectron.get_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detectron2_detector.BaseDetectron.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detectron2_detector.BaseDetectron.run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detectron2_detector.BaseDetectron.run_extract">
+<span class="sig-name descname"><span class="pre">run_extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predictions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detectron2_detector.BaseDetectron.run_extract" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.detectron2_detector.DetectronDetector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.detectron2_detector.</span></span><span class="sig-name descname"><span class="pre">DetectronDetector</span></span><a class="headerlink" href="#kpick.detectron2_detector.DetectronDetector" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.detector_base.BaseDetector" title="kpick.detector_base.BaseDetector"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDetector</span></code></a>, <a class="reference internal" href="#kpick.detectron2_detector.BaseDetectron" title="kpick.detectron2_detector.BaseDetectron"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDetectron</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detectron2_detector.DetectronDetector.get_model">
+<span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_cfg_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detectron2_detector.DetectronDetector.get_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detectron2_detector.DetectronDetector.predict_single">
+<span class="sig-name descname"><span class="pre">predict_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detectron2_detector.DetectronDetector.predict_single" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.detectron2_detector.DetectronDetector.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detectron2_detector.DetectronDetector.run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.detectron2_detector.demo_detectron_gui">
+<span class="sig-prename descclassname"><span class="pre">kpick.detectron2_detector.</span></span><span class="sig-name descname"><span class="pre">demo_detectron_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">model_cfg_path=None,</span> <span class="pre">model_path=None,</span> <span class="pre">num_classes=None,</span> <span class="pre">cfg_path=None,</span> <span class="pre">default_cfg_path=None,</span> <span class="pre">Detector=&lt;class</span> <span class="pre">'kpick.detectron2_detector.DetectronDetector'&gt;,</span> <span class="pre">score_thresh=0.5,</span> <span class="pre">kpt_skeleton=None,</span> <span class="pre">key_args=None,</span> <span class="pre">sensors=['realsense'],</span> <span class="pre">data_root=None,</span> <span class="pre">rgb_formats=None,</span> <span class="pre">depth_formats=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detectron2_detector.demo_detectron_gui" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.detectron2_detector.get_detectron2_default_args">
+<span class="sig-prename descclassname"><span class="pre">kpick.detectron2_detector.</span></span><span class="sig-name descname"><span class="pre">get_detectron2_default_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detectron2_detector.get_detectron2_default_args" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.detectron2_detector.get_detectron_gui_obj">
+<span class="sig-prename descclassname"><span class="pre">kpick.detectron2_detector.</span></span><span class="sig-name descname"><span class="pre">get_detectron_gui_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DetectorObj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detectron2_detector.get_detectron_gui_obj" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.detectron2_detector.get_detectron_obj">
+<span class="sig-prename descclassname"><span class="pre">kpick.detectron2_detector.</span></span><span class="sig-name descname"><span class="pre">get_detectron_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Detector=&lt;class</span> <span class="pre">'kpick.detectron2_detector.DetectronDetector'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.detectron2_detector.get_detectron_obj" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-kpick">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-kpick" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="kpick" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="kpick.apps.html" class="btn btn-neutral float-right" title="kpick.apps package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Trung Bui.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

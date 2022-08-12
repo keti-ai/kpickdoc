@@ -1,0 +1,21 @@
+kpick.apps.kimchi package
+=========================
+
+Submodules
+----------
+
+kpick.apps.kimchi.kimchi\_mask\_angle\_detector module
+------------------------------------------------------
+
+.. automodule:: kpick.apps.kimchi.kimchi_mask_angle_detector
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: kpick.apps.kimchi
+   :members:
+   :undoc-members:
+   :show-inheritance:
