@@ -1,0 +1,72 @@
+
+This document provides a brief intro of the usage of builtin functions and detectors designed for each App.
+
+Grip Detection
+------------
+
+Suction Detection
+------------
+
+Inner Grip Detection
+------------
+
+Inner and Outer Grip Detection
+------------
+
+Create and Load Detector
+===========================
+* Using the default Kpick's detector ::
+
+    from kpick.pick.grip_inner_outer import get_inner_outer_grip_detector_obj
+    detector = get_inner_outer_grip_detector_obj()(cfg_path=cfg_path)
+
+.. note:: Please refer **configs/inner_outer_grip.cfg**
+
+Modify and Load Detector
+============================
+* Extending the default Kpick's detector ::
+
+    from kpick.pick.grip_inner_outer import get_inner_outer_grip_detector_obj, InnerOuterGripDetector
+    class AppDector(InnerOuterGripDetector):
+        def new_function(self):
+            print('new function')
+
+    detector = get_inner_outer_grip_detector_obj(Detector=AppDector)(cfg_path=cfg_path)
+
+Demo on single RGB-D image
+==============================
+::
+
+    import cv2
+    from ketisdk.vision.utils.rgbd_utils_v2 import RGBD
+
+    # load model
+    detector = get_inner_outer_grip_detector_obj()(cfg_path='configs/inner_outer_grip.cfg')
+
+    # load image
+    rgb = cv2.imread('data/test_images/inner_outer_grip_rgb.png')[:, :, ::-1]
+    depth = cv2.imread('data/test_images/inner_outer_grip_depth.png', cv2.IMREAD_UNCHANGED)
+    rgbd = RGBD(rgb=rgb, depth=depth, depth_min=detector.args.sensor.depth_min, depth_max=detector.args.sensor.depth_max,
+                denoise_ksize=detector.args.sensor.denoise_ksize)
+    rgbd.set_workspace(pts=detector.args.sensor.crop_poly)
+
+    # predict
+    detector.args.flag.show_steps = True
+    ret = detector.detect_and_show(rgbd=rgbd)
+
+    # show
+    cv2.imshow('reviewer', ret['im'][:, :, ::-1])
+    cv2.waitKey()
+
+
+
+
+
+
+
+
+
+
+
+
+

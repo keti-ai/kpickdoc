@@ -18,7 +18,9 @@
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="kpick.classifier.classification_utils package" href="kpick.classifier.classification_utils.html" />
+    <link rel="prev" title="kpick.classifier package" href="kpick.classifier.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,13 +44,55 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Installation Guide:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../src/install.html">What is  Kpick?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/install.html">Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/install.html#pip-installation">Pip Installation</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html">What is  Kpick?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html#how-to-use">How to use?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html#how-to-contribute">How to contribute?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html">Getting started with Kpick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/getting_started.html#avoiding-co-coding-conflicts">Avoiding co-coding conflicts</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Picking Solution Development:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/pick.html">Grip Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/pick.html#suction-detection">Suction Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/pick.html#inner-grip-detection">Inner Grip Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/pick.html#inner-and-outer-grip-detection">Inner and Outer Grip Detection</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps Development:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html">Robotplus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#fpcb">FPCB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#mujin">Mujin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#order-picking">Order Picking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#kimchi">Kimchi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/apps.html#smart-gripper">Smart Gripper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">kpick</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="kpick.html">kpick package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="kpick.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="kpick.apps.html">kpick.apps package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.base.html">kpick.base package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="kpick.classifier.html">kpick.classifier package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.dataset.html">kpick.dataset package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.instance_segmentation.html">kpick.instance_segmentation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.matching.html">kpick.matching package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.object_detection.html">kpick.object_detection package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pick.html">kpick.pick package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.pose_estimation.html">kpick.pose_estimation package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kpick.segmentation.html">kpick.segmentation package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.html#module-kpick.detector_base">kpick.detector_base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.html#module-kpick.detectron2_detector">kpick.detectron2_detector module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kpick.html#module-kpick">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -65,6 +109,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">kpick</a> &raquo;</li>
+          <li><a href="kpick.html">kpick package</a> &raquo;</li>
+          <li><a href="kpick.classifier.html">kpick.classifier package</a> &raquo;</li>
       <li>kpick.classifier.cifar_classification_models package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/api_docs/kpick.classifier.cifar_classification_models.rst.txt" rel="nofollow"> View page source</a>
@@ -244,7 +291,10 @@ Without BN, the start learning rate should be 0.01
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="kpick.classifier.html" class="btn btn-neutral float-left" title="kpick.classifier package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="kpick.classifier.classification_utils.html" class="btn btn-neutral float-right" title="kpick.classifier.classification_utils package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

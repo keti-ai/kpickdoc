@@ -52,6 +52,13 @@
 <li class="toctree-l1"><a class="reference internal" href="src/getting_started.html">Getting started with Kpick</a></li>
 <li class="toctree-l1"><a class="reference internal" href="src/getting_started.html#avoiding-co-coding-conflicts">Avoiding co-coding conflicts</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Picking Solution Development:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="src/pick.html">Grip Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/pick.html#suction-detection">Suction Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/pick.html#inner-grip-detection">Inner Grip Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/pick.html#inner-and-outer-grip-detection">Inner and Outer Grip Detection</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Apps Development:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="src/apps.html">Robotplus</a></li>
@@ -284,6 +291,11 @@
      <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
+       <a href="api_docs/kpick.classifier.classification_utils.progress.html#module-kpick.classifier.classification_utils.progress"><code class="xref">kpick.classifier.classification_utils.progress</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
        <a href="api_docs/kpick.classifier.classification_utils.progress.progress.html#module-kpick.classifier.classification_utils.progress.progress"><code class="xref">kpick.classifier.classification_utils.progress.progress</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
@@ -305,6 +317,11 @@
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="api_docs/kpick.classifier.classification_utils.progress.progress.html#module-kpick.classifier.classification_utils.progress.progress.spinner"><code class="xref">kpick.classifier.classification_utils.progress.progress.spinner</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="api_docs/kpick.classifier.classification_utils.progress.html#module-kpick.classifier.classification_utils.progress.test_progress"><code class="xref">kpick.classifier.classification_utils.progress.test_progress</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
@@ -469,12 +486,42 @@
      <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
+       <a href="api_docs/kpick.pick.html#module-kpick.pick.base_grasp_detection"><code class="xref">kpick.pick.base_grasp_detection</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
        <a href="api_docs/kpick.pick.dataset.html#module-kpick.pick.dataset"><code class="xref">kpick.pick.dataset</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
+       <a href="api_docs/kpick.pick.dataset.html#module-kpick.pick.dataset.dataset"><code class="xref">kpick.pick.dataset.dataset</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="api_docs/kpick.pick.dataset.html#module-kpick.pick.dataset.grasp_cifar10_dber"><code class="xref">kpick.pick.dataset.grasp_cifar10_dber</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="api_docs/kpick.pick.dataset.html#module-kpick.pick.dataset.grip_cifar10_dber"><code class="xref">kpick.pick.dataset.grip_cifar10_dber</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="api_docs/kpick.pick.dataset.html#module-kpick.pick.dataset.suction_cifar10_dber"><code class="xref">kpick.pick.dataset.suction_cifar10_dber</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
        <a href="api_docs/kpick.pick.grip.html#module-kpick.pick.grip"><code class="xref">kpick.pick.grip</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="api_docs/kpick.pick.grip.html#module-kpick.pick.grip.grip_detection"><code class="xref">kpick.pick.grip.grip_detection</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>
@@ -494,7 +541,27 @@
      <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
+       <a href="api_docs/kpick.pick.grip_inner.html#module-kpick.pick.grip_inner.inner_grip_detector"><code class="xref">kpick.pick.grip_inner.inner_grip_detector</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="api_docs/kpick.pick.html#module-kpick.pick.grip_suction_detector"><code class="xref">kpick.pick.grip_suction_detector</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
        <a href="api_docs/kpick.pick.suction.html#module-kpick.pick.suction"><code class="xref">kpick.pick.suction</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="api_docs/kpick.pick.suction.html#module-kpick.pick.suction.suction_detection"><code class="xref">kpick.pick.suction.suction_detection</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="api_docs/kpick.pick.html#module-kpick.pick.train"><code class="xref">kpick.pick.train</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-1">
        <td></td>

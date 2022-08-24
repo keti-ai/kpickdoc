@@ -40,6 +40,12 @@ Links
 
 .. toctree::
    :maxdepth: 2
+   :caption: Picking Solution Development:
+
+   src/pick.rst
+
+.. toctree::
+   :maxdepth: 2
    :caption: Apps Development:
 
    src/apps.rst
