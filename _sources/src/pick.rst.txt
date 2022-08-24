@@ -12,8 +12,36 @@ Inner Grip Detection
 
 Inner and Outer Grip Detection
 ------------
+1. Output format
+==================
 
-Create and Load Detector
+.. list-table::
+   :widths: 10 90
+   :header-rows: 0
+
+   * - **Field**
+     - **Description**
+   * - grip
+     - num_grip x 10 nd.array where a grip g=[xc,yc,zc,W, H, x0, y0, x1, y1, score]. (x0,y0) and (x1, y1) are 2 endpoints of the grip
+   * - inner_grip
+     - num_grip x 4 where a grip g=[xc, yc, zc, w, score]
+   * - best_ind
+     - best grip index of grips
+   * - best_inner_ind
+     - best grip index of inner grips
+   * - best_n_inds
+     - top n indexes of grips
+   * - best_n_inner_inds
+     - top n indexes of inner grips
+   * - target
+     - target grip selected from all grips and inner grips
+   * - target_name
+     - name of target grip [grip/inner_grip]
+   * - im
+     - display grip on the input image
+
+
+2. Create and Load Detector
 ===========================
 * Using the default Kpick's detector ::
 
@@ -22,7 +50,7 @@ Create and Load Detector
 
 .. note:: Please refer **configs/inner_outer_grip.cfg**
 
-Modify and Load Detector
+3. Modify and Load Detector
 ============================
 * Extending the default Kpick's detector ::
 
@@ -33,7 +61,7 @@ Modify and Load Detector
 
     detector = get_inner_outer_grip_detector_obj(Detector=AppDector)(cfg_path=cfg_path)
 
-Demo on single RGB-D image
+4. Demo on single RGB-D image
 ==============================
 ::
 

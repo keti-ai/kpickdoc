@@ -58,9 +58,10 @@
 <li class="toctree-l1"><a class="reference internal" href="#suction-detection">Suction Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#inner-grip-detection">Inner Grip Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#inner-and-outer-grip-detection">Inner and Outer Grip Detection</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#create-and-load-detector">Create and Load Detector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#modify-and-load-detector">Modify and Load Detector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#demo-on-single-rgb-d-image">Demo on single RGB-D image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#output-format">1. Output format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-and-load-detector">2. Create and Load Detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modify-and-load-detector">3. Modify and Load Detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#demo-on-single-rgb-d-image">4. Demo on single RGB-D image</a></li>
 </ul>
 </li>
 </ul>
@@ -114,8 +115,49 @@
 </section>
 <section id="inner-and-outer-grip-detection">
 <h1>Inner and Outer Grip Detection<a class="headerlink" href="#inner-and-outer-grip-detection" title="Permalink to this heading"></a></h1>
+<section id="output-format">
+<h2>1. Output format<a class="headerlink" href="#output-format" title="Permalink to this heading"></a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Field</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>grip</p></td>
+<td><p>num_grip x 10 nd.array where a grip g=[xc,yc,zc,W, H, x0, y0, x1, y1, score]. (x0,y0) and (x1, y1) are 2 endpoints of the grip</p></td>
+</tr>
+<tr class="row-odd"><td><p>inner_grip</p></td>
+<td><p>num_grip x 4 where a grip g=[xc, yc, zc, w, score]</p></td>
+</tr>
+<tr class="row-even"><td><p>best_ind</p></td>
+<td><p>best grip index of grips</p></td>
+</tr>
+<tr class="row-odd"><td><p>best_inner_ind</p></td>
+<td><p>best grip index of inner grips</p></td>
+</tr>
+<tr class="row-even"><td><p>best_n_inds</p></td>
+<td><p>top n indexes of grips</p></td>
+</tr>
+<tr class="row-odd"><td><p>best_n_inner_inds</p></td>
+<td><p>top n indexes of inner grips</p></td>
+</tr>
+<tr class="row-even"><td><p>target</p></td>
+<td><p>target grip selected from all grips and inner grips</p></td>
+</tr>
+<tr class="row-odd"><td><p>target_name</p></td>
+<td><p>name of target grip [grip/inner_grip]</p></td>
+</tr>
+<tr class="row-even"><td><p>im</p></td>
+<td><p>display grip on the input image</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="create-and-load-detector">
-<h2>Create and Load Detector<a class="headerlink" href="#create-and-load-detector" title="Permalink to this heading"></a></h2>
+<h2>2. Create and Load Detector<a class="headerlink" href="#create-and-load-detector" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>Using the default Kpick’s detector</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.pick.grip_inner_outer</span> <span class="kn">import</span> <span class="n">get_inner_outer_grip_detector_obj</span>
@@ -130,7 +172,7 @@
 </div>
 </section>
 <section id="modify-and-load-detector">
-<h2>Modify and Load Detector<a class="headerlink" href="#modify-and-load-detector" title="Permalink to this heading"></a></h2>
+<h2>3. Modify and Load Detector<a class="headerlink" href="#modify-and-load-detector" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>Extending the default Kpick’s detector</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.pick.grip_inner_outer</span> <span class="kn">import</span> <span class="n">get_inner_outer_grip_detector_obj</span><span class="p">,</span> <span class="n">InnerOuterGripDetector</span>
@@ -145,7 +187,7 @@
 </ul>
 </section>
 <section id="demo-on-single-rgb-d-image">
-<h2>Demo on single RGB-D image<a class="headerlink" href="#demo-on-single-rgb-d-image" title="Permalink to this heading"></a></h2>
+<h2>4. Demo on single RGB-D image<a class="headerlink" href="#demo-on-single-rgb-d-image" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
 <span class="kn">from</span> <span class="nn">ketisdk.vision.utils.rgbd_utils_v2</span> <span class="kn">import</span> <span class="n">RGBD</span>
 
