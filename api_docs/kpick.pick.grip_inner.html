@@ -58,6 +58,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../src/pick.html#suction-detection">Suction Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../src/pick.html#inner-grip-detection">Inner Grip Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../src/pick.html#inner-and-outer-grip-detection">Inner and Outer Grip Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../src/pick.html#hybrid-grasp-detection">Hybrid Grasp Detection</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Apps Development:</span></p>
 <ul>
@@ -130,8 +131,59 @@
 <section id="kpick-pick-grip-inner-grip-inner-module">
 <h2>kpick.pick.grip_inner.grip_inner module<a class="headerlink" href="#kpick-pick-grip-inner-grip-inner-module" title="Permalink to this heading"></a></h2>
 </section>
-<section id="kpick-pick-grip-inner-inner-grip-detector-module">
-<h2>kpick.pick.grip_inner.inner_grip_detector module<a class="headerlink" href="#kpick-pick-grip-inner-inner-grip-detector-module" title="Permalink to this heading"></a></h2>
+<section id="module-kpick.pick.grip_inner.inner_grip_detector">
+<span id="kpick-pick-grip-inner-inner-grip-detector-module"></span><h2>kpick.pick.grip_inner.inner_grip_detector module<a class="headerlink" href="#module-kpick.pick.grip_inner.inner_grip_detector" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.pick.grip_inner.inner_grip_detector.InnerGripDetector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.pick.grip_inner.inner_grip_detector.</span></span><span class="sig-name descname"><span class="pre">InnerGripDetector</span></span><a class="headerlink" href="#kpick.pick.grip_inner.inner_grip_detector.InnerGripDetector" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="kpick.html#kpick.detectron2_detector.DetectronDetector" title="kpick.detectron2_detector.DetectronDetector"><code class="xref py py-class docutils literal notranslate"><span class="pre">DetectronDetector</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.grip_inner.inner_grip_detector.InnerGripDetector.detect_inner_grips">
+<span class="sig-name descname"><span class="pre">detect_inner_grips</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">best_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.grip_inner.inner_grip_detector.InnerGripDetector.detect_inner_grips" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.grip_inner.inner_grip_detector.InnerGripDetector.get_mask">
+<span class="sig-name descname"><span class="pre">get_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.grip_inner.inner_grip_detector.InnerGripDetector.get_mask" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.grip_inner.inner_grip_detector.InnerGripDetector.get_model">
+<span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.grip_inner.inner_grip_detector.InnerGripDetector.get_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.grip_inner.inner_grip_detector.InnerGripDetector.show_inner_grips">
+<span class="sig-name descname"><span class="pre">show_inner_grips</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">det</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.grip_inner.inner_grip_detector.InnerGripDetector.show_inner_grips" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.pick.grip_inner.inner_grip_detector.demo_inner_grip_gui">
+<span class="sig-prename descclassname"><span class="pre">kpick.pick.grip_inner.inner_grip_detector.</span></span><span class="sig-name descname"><span class="pre">demo_inner_grip_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">title='Grip</span> <span class="pre">Detection</span> <span class="pre">GUI',</span> <span class="pre">Detector=&lt;class</span> <span class="pre">'kpick.pick.grip_inner.inner_grip_detector.InnerGripDetector'&gt;,</span> <span class="pre">cfg_path=None,</span> <span class="pre">default_cfg_path='configs/default.cfg',</span> <span class="pre">sensors=['realsense'],</span> <span class="pre">key_args=[],</span> <span class="pre">data_root=None,</span> <span class="pre">rgb_formats=None,</span> <span class="pre">depth_formats=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.grip_inner.inner_grip_detector.demo_inner_grip_gui" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.pick.grip_inner.inner_grip_detector.demo_simple">
+<span class="sig-prename descclassname"><span class="pre">kpick.pick.grip_inner.inner_grip_detector.</span></span><span class="sig-name descname"><span class="pre">demo_simple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.grip_inner.inner_grip_detector.demo_simple" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.pick.grip_inner.inner_grip_detector.get_base_inner_grip_cfg">
+<span class="sig-prename descclassname"><span class="pre">kpick.pick.grip_inner.inner_grip_detector.</span></span><span class="sig-name descname"><span class="pre">get_base_inner_grip_cfg</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.grip_inner.inner_grip_detector.get_base_inner_grip_cfg" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.pick.grip_inner.inner_grip_detector.get_inner_detector_gui">
+<span class="sig-prename descclassname"><span class="pre">kpick.pick.grip_inner.inner_grip_detector.</span></span><span class="sig-name descname"><span class="pre">get_inner_detector_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DetectorObj=&lt;class</span> <span class="pre">'kpick.pick.grip_inner.inner_grip_detector.get_inner_detector_obj.&lt;locals&gt;.InnerGripDetectorObj'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.grip_inner.inner_grip_detector.get_inner_detector_gui" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.pick.grip_inner.inner_grip_detector.get_inner_detector_obj">
+<span class="sig-prename descclassname"><span class="pre">kpick.pick.grip_inner.inner_grip_detector.</span></span><span class="sig-name descname"><span class="pre">get_inner_detector_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Detector=&lt;class</span> <span class="pre">'kpick.pick.grip_inner.inner_grip_detector.InnerGripDetector'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.grip_inner.inner_grip_detector.get_inner_detector_obj" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </section>
 <section id="module-kpick.pick.grip_inner">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-kpick.pick.grip_inner" title="Permalink to this heading"></a></h2>

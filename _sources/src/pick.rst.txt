@@ -55,11 +55,11 @@ Inner and Outer Grip Detection
 * Extending the default Kpick's detector ::
 
     from kpick.pick.grip_inner_outer import get_inner_outer_grip_detector_obj, InnerOuterGripDetector
-    class AppDector(InnerOuterGripDetector):
+    class AppDetector(InnerOuterGripDetector):
         def new_function(self):
             print('new function')
 
-    detector = get_inner_outer_grip_detector_obj(Detector=AppDector)(cfg_path=cfg_path)
+    detector = get_inner_outer_grip_detector_obj(Detector=AppDetector)(cfg_path=cfg_path)
 
 4. Demo on single RGB-D image
 ==============================
@@ -81,6 +81,72 @@ Inner and Outer Grip Detection
     # predict
     detector.args.flag.show_steps = True
     ret = detector.detect_and_show(rgbd=rgbd)
+
+    # show
+    cv2.imshow('reviewer', ret['im'][:, :, ::-1])
+    cv2.waitKey()
+
+
+Hybrid Grasp Detection
+------------
+1. Output format
+==================
+
+.. list-table::
+   :widths: 10 90
+   :header-rows: 0
+
+   * - **Field**
+     - **Description**
+   * - grip
+     - num_grip x 10 nd.array where a grip g=[xc,yc,zc,W, H, x0, y0, x1, y1, score]. (x0,y0) and (x1, y1) are 2 endpoints of the grip
+   * - best_ind
+     - best grip index of grips
+   * - best_n_inds
+     - top n indexes of grips
+   * - im
+     - display grip on the input image
+
+2. Create and Load Detector
+===========================
+* Using the default Kpick's detector ::
+
+    from kpick.pick.hybrid_grasp import get_hybrid_grasp_detector_obj
+    detector = get_hybrid_grasp_detector_obj()(cfg_path=cfg_path)
+
+.. note:: Please refer **configs/inner_outer_grip.cfg**
+
+3. Modify and Load Detector
+============================
+* Extending the default Kpick's detector ::
+
+    from kpick.pick.hybrid_grasp import get_hybrid_grasp_detector_obj, HybridGraspDetector
+    class AppDetector(HybridGraspDetector):
+        def new_function(self):
+            print('new function')
+
+    detector = get_hybrid_grasp_detector_obj(Detector=AppDetector)(cfg_path=cfg_path)
+
+4. Demo on single RGB-D image
+==============================
+::
+
+    import cv2
+    from ketisdk.vision.utils.rgbd_utils_v2 import RGBD
+
+    # load model
+    detector = get_hybrid_grasp_detector_obj()(cfg_path='configs/hybrid_grasp.cfg')
+
+    # load image
+    rgb = cv2.imread('data/test_images/hybrid_grasp_rgb.png')[:, :, ::-1]
+    depth = cv2.imread('data/test_images/hybrid_grasp_depth.png', cv2.IMREAD_UNCHANGED)
+    rgbd = RGBD(rgb=rgb, depth=depth, depth_min=detector.args.sensor.depth_min, depth_max=detector.args.sensor.depth_max,
+                denoise_ksize=detector.args.sensor.denoise_ksize)
+    rgbd.set_workspace(pts=detector.args.sensor.crop_poly)
+
+    # predict
+    detector.args.flag.show_steps = True
+    ret = detector.detect_and_show_hybrid(rgbd=rgbd)
 
     # show
     cv2.imshow('reviewer', ret['im'][:, :, ::-1])
