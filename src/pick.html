@@ -62,6 +62,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#create-and-load-detector">2. Create and Load Detector</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#modify-and-load-detector">3. Modify and Load Detector</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#demo-on-single-rgb-d-image">4. Demo on single RGB-D image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters-tuning">5. Parameters tuning</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#hybrid-grasp-detection">Hybrid Grasp Detection</a><ul>
@@ -69,6 +70,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id2">2. Create and Load Detector</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">3. Modify and Load Detector</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">4. Demo on single RGB-D image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">5. Parameters tuning</a></li>
 </ul>
 </li>
 </ul>
@@ -122,6 +124,7 @@
 </section>
 <section id="inner-and-outer-grip-detection">
 <h1>Inner and Outer Grip Detection<a class="headerlink" href="#inner-and-outer-grip-detection" title="Permalink to this heading"></a></h1>
+<a class="reference internal image-reference" href="../_images/fig_inner_outer_grip_diagram.png"><img alt="../_images/fig_inner_outer_grip_diagram.png" src="../_images/fig_inner_outer_grip_diagram.png" style="width: 100%;" /></a>
 <section id="output-format">
 <h2>1. Output format<a class="headerlink" href="#output-format" title="Permalink to this heading"></a></h2>
 <table class="colwidths-given docutils align-default">
@@ -204,9 +207,9 @@
 <span class="c1"># load image</span>
 <span class="n">rgb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/test_images/inner_outer_grip_rgb.png&#39;</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">depth</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/test_images/inner_outer_grip_depth.png&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span>
-<span class="n">rgbd</span> <span class="o">=</span> <span class="n">RGBD</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="n">rgb</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">depth_min</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">depth_min</span><span class="p">,</span> <span class="n">depth_max</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">depth_max</span><span class="p">,</span>
+<span class="n">rgbd</span> <span class="o">=</span> <span class="n">RGBD</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="n">rgb</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">depth_min</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">depth_max</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
             <span class="n">denoise_ksize</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">denoise_ksize</span><span class="p">)</span>
-<span class="n">rgbd</span><span class="o">.</span><span class="n">set_workspace</span><span class="p">(</span><span class="n">pts</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">crop_poly</span><span class="p">)</span>
+<span class="n">rgbd</span><span class="o">.</span><span class="n">set_workspace</span><span class="p">(</span><span class="n">pts</span><span class="o">=</span><span class="p">[(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">270</span><span class="p">),</span> <span class="p">(</span><span class="mi">889</span><span class="p">,</span> <span class="mi">273</span><span class="p">),</span> <span class="p">(</span><span class="mi">890</span><span class="p">,</span> <span class="mi">635</span><span class="p">),</span> <span class="p">(</span><span class="mi">359</span><span class="p">,</span> <span class="mi">632</span><span class="p">)])</span>
 
 <span class="c1"># predict</span>
 <span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">show_steps</span> <span class="o">=</span> <span class="kc">True</span>
@@ -218,9 +221,48 @@
 </pre></div>
 </div>
 </section>
+<section id="parameters-tuning">
+<h2>5. Parameters tuning<a class="headerlink" href="#parameters-tuning" title="Permalink to this heading"></a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.erode_h</p></td>
+<td><p>gripper plate’s width</p></td>
+</tr>
+<tr class="row-odd"><td><p>grip_net.grip_w_ranges</p></td>
+<td><p>ranges of gripper’s width, which are tuned for each target object</p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.grad_thresh</p></td>
+<td><p>gradient threshold. Smaller value makes more grip candidates but noisy, and vice versa</p></td>
+</tr>
+<tr class="row-odd"><td><p>grip_net.remove_bg</p></td>
+<td><p>remove detected grips on the background or not</p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.top_n</p></td>
+<td><p>top n target grips</p></td>
+</tr>
+<tr class="row-odd"><td><p>grip_net.dy</p></td>
+<td><p>Smaller value makes more dense grip candidates.</p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.ellipse_axes</p></td>
+<td><p>Dimensions of ellipse that examines neighbor grips. For bigger object, dimension should be larger</p></td>
+</tr>
+<tr class="row-odd"><td><p>inner_grip_net.score_thresh</p></td>
+<td><p>Score threshold of inner grip detector</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="hybrid-grasp-detection">
 <h1>Hybrid Grasp Detection<a class="headerlink" href="#hybrid-grasp-detection" title="Permalink to this heading"></a></h1>
+<a class="reference internal image-reference" href="../_images/fig_hybrid_grasp_diagram.png"><img alt="../_images/fig_hybrid_grasp_diagram.png" src="../_images/fig_hybrid_grasp_diagram.png" style="width: 100%;" /></a>
 <section id="id1">
 <h2>1. Output format<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <table class="colwidths-given docutils align-default">
@@ -288,9 +330,9 @@
 <span class="c1"># load image</span>
 <span class="n">rgb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/test_images/hybrid_grasp_rgb.png&#39;</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">depth</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/test_images/hybrid_grasp_depth.png&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span>
-<span class="n">rgbd</span> <span class="o">=</span> <span class="n">RGBD</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="n">rgb</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">depth_min</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">depth_min</span><span class="p">,</span> <span class="n">depth_max</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">depth_max</span><span class="p">,</span>
+<span class="n">rgbd</span> <span class="o">=</span> <span class="n">RGBD</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="n">rgb</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">depth_min</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">depth_max</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
             <span class="n">denoise_ksize</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">denoise_ksize</span><span class="p">)</span>
-<span class="n">rgbd</span><span class="o">.</span><span class="n">set_workspace</span><span class="p">(</span><span class="n">pts</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">crop_poly</span><span class="p">)</span>
+<span class="n">rgbd</span><span class="o">.</span><span class="n">set_workspace</span><span class="p">(</span><span class="n">pts</span><span class="o">=</span><span class="p">[(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">270</span><span class="p">),</span> <span class="p">(</span><span class="mi">889</span><span class="p">,</span> <span class="mi">273</span><span class="p">),</span> <span class="p">(</span><span class="mi">890</span><span class="p">,</span> <span class="mi">635</span><span class="p">),</span> <span class="p">(</span><span class="mi">359</span><span class="p">,</span> <span class="mi">632</span><span class="p">)])</span>
 
 <span class="c1"># predict</span>
 <span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">show_steps</span> <span class="o">=</span> <span class="kc">True</span>
@@ -301,6 +343,50 @@
 <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
 </pre></div>
 </div>
+</section>
+<section id="id5">
+<h2>5. Parameters tuning<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.erode_h</p></td>
+<td><p>gripper plate’s width</p></td>
+</tr>
+<tr class="row-odd"><td><p>grip_net.grip_w_ranges</p></td>
+<td><p>ranges of gripper’s width, which are tuned for each target object</p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.grad_thresh</p></td>
+<td><p>gradient threshold. Smaller value makes more grip candidates but noisy, and vice versa</p></td>
+</tr>
+<tr class="row-odd"><td><p>grip_net.remove_bg</p></td>
+<td><p>remove detected grips on the background or not</p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.top_n</p></td>
+<td><p>top n target grips</p></td>
+</tr>
+<tr class="row-odd"><td><p>grip_net.dy</p></td>
+<td><p>Smaller value makes more dense grip candidates.</p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.ellipse_axes</p></td>
+<td><p>Dimensions of ellipse that examines neighbor grips. For bigger object, dimension should be larger</p></td>
+</tr>
+<tr class="row-odd"><td><p>suction_net.pad_sizes</p></td>
+<td><p>Patch sizes of suction pose scanning process. Larger value should be set for larger object</p></td>
+</tr>
+<tr class="row-even"><td><p>suction_net.stride</p></td>
+<td><p>Stride of suction scanning process. Smaller value makes more suction candidates, but computational heavier.</p></td>
+</tr>
+<tr class="row-odd"><td><p>rpn.enable</p></td>
+<td><p>Enable RPN for suction detector or not</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 

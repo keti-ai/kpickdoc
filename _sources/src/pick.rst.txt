@@ -12,8 +12,13 @@ Inner Grip Detection
 
 Inner and Outer Grip Detection
 ------------
+
+.. image:: ../images/fig_inner_outer_grip_diagram.png
+   :width: 100 %
+
 1. Output format
 ==================
+
 
 .. list-table::
    :widths: 10 90
@@ -74,9 +79,9 @@ Inner and Outer Grip Detection
     # load image
     rgb = cv2.imread('data/test_images/inner_outer_grip_rgb.png')[:, :, ::-1]
     depth = cv2.imread('data/test_images/inner_outer_grip_depth.png', cv2.IMREAD_UNCHANGED)
-    rgbd = RGBD(rgb=rgb, depth=depth, depth_min=detector.args.sensor.depth_min, depth_max=detector.args.sensor.depth_max,
+    rgbd = RGBD(rgb=rgb, depth=depth, depth_min=600, depth_max=800,
                 denoise_ksize=detector.args.sensor.denoise_ksize)
-    rgbd.set_workspace(pts=detector.args.sensor.crop_poly)
+    rgbd.set_workspace(pts=[(360, 270), (889, 273), (890, 635), (359, 632)])
 
     # predict
     detector.args.flag.show_steps = True
@@ -87,8 +92,39 @@ Inner and Outer Grip Detection
     cv2.waitKey()
 
 
+5. Parameters tuning
+==============================
+.. list-table::
+   :widths: 10 90
+   :header-rows: 0
+
+   * - **Parameter**
+     - **Description**
+   * - grip_net.erode_h
+     - gripper plate's width
+   * - grip_net.grip_w_ranges
+     - ranges of gripper's width, which are tuned for each target object
+   * - grip_net.grad_thresh
+     - gradient threshold. Smaller value makes more grip candidates but noisy, and vice versa
+   * - grip_net.remove_bg
+     - remove detected grips on the background or not
+   * - grip_net.top_n
+     - top n target grips
+   * - grip_net.dy
+     - Smaller value makes more dense grip candidates.
+   * - grip_net.ellipse_axes
+     - Dimensions of ellipse that examines neighbor grips. For bigger object, dimension should be larger
+   * - inner_grip_net.score_thresh
+     - Score threshold of inner grip detector
+
+
+
 Hybrid Grasp Detection
 ------------
+
+.. image:: ../images/fig_hybrid_grasp_diagram.png
+   :width: 100 %
+
 1. Output format
 ==================
 
@@ -140,9 +176,9 @@ Hybrid Grasp Detection
     # load image
     rgb = cv2.imread('data/test_images/hybrid_grasp_rgb.png')[:, :, ::-1]
     depth = cv2.imread('data/test_images/hybrid_grasp_depth.png', cv2.IMREAD_UNCHANGED)
-    rgbd = RGBD(rgb=rgb, depth=depth, depth_min=detector.args.sensor.depth_min, depth_max=detector.args.sensor.depth_max,
+    rgbd = RGBD(rgb=rgb, depth=depth, depth_min=400, depth_max=600,
                 denoise_ksize=detector.args.sensor.denoise_ksize)
-    rgbd.set_workspace(pts=detector.args.sensor.crop_poly)
+    rgbd.set_workspace(pts=[(360, 270), (889, 273), (890, 635), (359, 632)])
 
     # predict
     detector.args.flag.show_steps = True
@@ -151,6 +187,35 @@ Hybrid Grasp Detection
     # show
     cv2.imshow('reviewer', ret['im'][:, :, ::-1])
     cv2.waitKey()
+
+5. Parameters tuning
+==============================
+.. list-table::
+   :widths: 10 90
+   :header-rows: 0
+
+   * - **Parameter**
+     - **Description**
+   * - grip_net.erode_h
+     - gripper plate's width
+   * - grip_net.grip_w_ranges
+     - ranges of gripper's width, which are tuned for each target object
+   * - grip_net.grad_thresh
+     - gradient threshold. Smaller value makes more grip candidates but noisy, and vice versa
+   * - grip_net.remove_bg
+     - remove detected grips on the background or not
+   * - grip_net.top_n
+     - top n target grips
+   * - grip_net.dy
+     - Smaller value makes more dense grip candidates.
+   * - grip_net.ellipse_axes
+     - Dimensions of ellipse that examines neighbor grips. For bigger object, dimension should be larger
+   * - suction_net.pad_sizes
+     - Patch sizes of suction pose scanning process. Larger value should be set for larger object
+   * - suction_net.stride
+     - Stride of suction scanning process. Smaller value makes more suction candidates, but computational heavier.
+   * - rpn.enable
+     - Enable RPN for suction detector or not
 
 
 
