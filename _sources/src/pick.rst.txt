@@ -150,7 +150,7 @@ Hybrid Grasp Detection
     from kpick.pick.hybrid_grasp import get_hybrid_grasp_detector_obj
     detector = get_hybrid_grasp_detector_obj()(cfg_path=cfg_path)
 
-.. note:: Please refer **configs/inner_outer_grip.cfg**
+.. note:: Please refer **configs/hybrid_grasp.cfg**
 
 3. Modify and Load Detector
 ============================
