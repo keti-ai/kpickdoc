@@ -83,7 +83,114 @@ Kimchi
 Smart Gripper
 --------------
 
+Multimode Grasp Detection
+------------
 
+.. image:: ../images/fig_multimode_grasp_diagram.png
+   :width: 100 %
+
+1. Output format
+"""""""""""""""""
+
+.. list-table::
+   :widths: 10 90
+   :header-rows: 0
+
+   * - **Field**
+     - **Description**
+   * - target_grasp
+     - target grasp selected among all detectors' results
+   * - target_grasp_name
+     - name of target grasp, can be: grip, suction, inner_grip, suction_2pts
+   * - im
+     - display grip on the input image
+
+2. Create and Load Detector
+"""""""""""""""""
+* Using the default Kpick's detector ::
+
+    from kpick.pick.multimode_grasp import get_multimode_grasp_detector_obj
+    from kpick.apps.randompicking.detector import RandomPickDetector
+    detector = get_multimode_grasp_detector_obj(RandomPickDetector)(cfg_path=cfg_path)
+
+.. note:: Please refer **kpick/apps/randompicking/configs/multimode_grasp.cfg**
+
+3. Modify and Load Detector
+"""""""""""""""""
+* Extending the default Kpick's detector ::
+
+    from kpick.pick.multimode_grasp import get_multimode_grasp_detector_obj
+    from kpick.apps.randompicking.detector import RandomPickDetector
+    class AppDetector(RandomPickDetector):
+        def new_function(self):
+            print('new function')
+
+    detector = get_multimode_grasp_detector_obj(AppDetector)(cfg_path=cfg_path)
+
+4. Demo on single RGB-D image
+"""""""""""""""""
+::
+
+    import cv2
+    from ketisdk.vision.utils.rgbd_utils_v2 import RGBD
+    import os
+    from ketisdk.vision.utils.rgbd_utils_v2 import RGBD
+    import kpick
+    KPICK_DIR = os.path.split(kpick.__file__)[0]
+
+    # load model
+    detector = get_multimode_grasp_detector_obj(RandomPickDetector)(cfg_path=os.path.join(KPICK_DIR, 'apps/randompicking/configs/multimode_grasp.cfg'))
+
+    # load image
+    rgb = cv2.imread('data/test_images/multimode_grasp_rgb.png')[:, :, ::-1]
+    depth = cv2.imread('data/test_images/multimode_grasp_depth.png', cv2.IMREAD_UNCHANGED)
+    rgbd = RGBD(rgb=rgb, depth=depth, depth_min=600, depth_max=800,
+                denoise_ksize=detector.args.sensor.denoise_ksize)
+    rgbd.set_workspace(pts=[(360, 270), (889, 273), (890, 635), (359, 632)])
+
+    # predict
+    detector.args.flag.show_steps = True
+    ret = detector.detect_and_show_multimode_grasp(rgbd=rgbd, grip_args=detector.args.grip_net,
+                                                   suction_args=detector.args.suction_net,
+                                                   inner_grip_args=detector.args.inner_grip_net,
+                                                   args=detector.args)
+
+    # show
+    cv2.imshow('reviewer', ret['im'][:, :, ::-1])
+    cv2.waitKey()
+
+.. image:: ../images/fig_randompicking_sample_result.png
+   :width: 70 %
+   :align: center
+
+5. Parameters tuning
+"""""""""""""""""
+.. list-table::
+   :widths: 10 90
+   :header-rows: 0
+
+   * - **Parameter**
+     - **Description**
+   * - grip_net.erode_h
+     - gripper plate's width
+   * - grip_net.grip_w_ranges
+     - ranges of gripper's width, which are tuned for each target object
+   * - grip_net.grad_thresh
+     - gradient threshold. Smaller value makes more grip candidates but noisy, and vice versa
+   * - grip_net.remove_bg
+     - remove detected grips on the background or not
+   * - grip_net.top_n
+     - top n target grips
+   * - grip_net.dy
+     - Smaller value makes more dense grip candidates.
+   * - grip_net.ellipse_axes
+     - Dimensions of ellipse that examines neighbor grips. For bigger object, dimension should be larger
+   * - suction_net.pad_sizes
+     - Patch sizes of suction pose scanning process. Larger value should be set for larger object
+   * - suction_net.stride
+     - Stride of suction scanning process. Smaller value makes more suction candidates, but computational heavier.
+   * - rpn.enable
+     - Enable RPN for suction detector or not
 
 
 

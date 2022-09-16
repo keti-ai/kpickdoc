@@ -78,6 +78,14 @@
 <li class="toctree-l1"><a class="reference internal" href="#order-picking">Order Picking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#kimchi">Kimchi</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#smart-gripper">Smart Gripper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#multimode-grasp-detection">Multimode Grasp Detection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#output-format">1. Output format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">2. Create and Load Detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">3. Modify and Load Detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">4. Demo on single RGB-D image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters-tuning">5. Parameters tuning</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Documentation:</span></p>
 <ul>
@@ -199,6 +207,142 @@
 </section>
 <section id="smart-gripper">
 <h1>Smart Gripper<a class="headerlink" href="#smart-gripper" title="Permalink to this heading"></a></h1>
+</section>
+<section id="multimode-grasp-detection">
+<h1>Multimode Grasp Detection<a class="headerlink" href="#multimode-grasp-detection" title="Permalink to this heading"></a></h1>
+<a class="reference internal image-reference" href="../_images/fig_multimode_grasp_diagram.png"><img alt="../_images/fig_multimode_grasp_diagram.png" src="../_images/fig_multimode_grasp_diagram.png" style="width: 100%;" /></a>
+<section id="output-format">
+<h2>1. Output format<a class="headerlink" href="#output-format" title="Permalink to this heading"></a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Field</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>target_grasp</p></td>
+<td><p>target grasp selected among all detectors’ results</p></td>
+</tr>
+<tr class="row-odd"><td><p>target_grasp_name</p></td>
+<td><p>name of target grasp, can be: grip, suction, inner_grip, suction_2pts</p></td>
+</tr>
+<tr class="row-even"><td><p>im</p></td>
+<td><p>display grip on the input image</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id1">
+<h2>2. Create and Load Detector<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Using the default Kpick’s detector</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.pick.multimode_grasp</span> <span class="kn">import</span> <span class="n">get_multimode_grasp_detector_obj</span>
+<span class="kn">from</span> <span class="nn">kpick.apps.randompicking.detector</span> <span class="kn">import</span> <span class="n">RandomPickDetector</span>
+<span class="n">detector</span> <span class="o">=</span> <span class="n">get_multimode_grasp_detector_obj</span><span class="p">(</span><span class="n">RandomPickDetector</span><span class="p">)(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">cfg_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please refer <strong>kpick/apps/randompicking/configs/multimode_grasp.cfg</strong></p>
+</div>
+</section>
+<section id="id2">
+<h2>3. Modify and Load Detector<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Extending the default Kpick’s detector</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.pick.multimode_grasp</span> <span class="kn">import</span> <span class="n">get_multimode_grasp_detector_obj</span>
+<span class="kn">from</span> <span class="nn">kpick.apps.randompicking.detector</span> <span class="kn">import</span> <span class="n">RandomPickDetector</span>
+<span class="k">class</span> <span class="nc">AppDetector</span><span class="p">(</span><span class="n">RandomPickDetector</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">new_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;new function&#39;</span><span class="p">)</span>
+
+<span class="n">detector</span> <span class="o">=</span> <span class="n">get_multimode_grasp_detector_obj</span><span class="p">(</span><span class="n">AppDetector</span><span class="p">)(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">cfg_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h2>4. Demo on single RGB-D image<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">from</span> <span class="nn">ketisdk.vision.utils.rgbd_utils_v2</span> <span class="kn">import</span> <span class="n">RGBD</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">ketisdk.vision.utils.rgbd_utils_v2</span> <span class="kn">import</span> <span class="n">RGBD</span>
+<span class="kn">import</span> <span class="nn">kpick</span>
+<span class="n">KPICK_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">kpick</span><span class="o">.</span><span class="vm">__file__</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># load model</span>
+<span class="n">detector</span> <span class="o">=</span> <span class="n">get_multimode_grasp_detector_obj</span><span class="p">(</span><span class="n">RandomPickDetector</span><span class="p">)(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">KPICK_DIR</span><span class="p">,</span> <span class="s1">&#39;apps/randompicking/configs/multimode_grasp.cfg&#39;</span><span class="p">))</span>
+
+<span class="c1"># load image</span>
+<span class="n">rgb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/test_images/multimode_grasp_rgb.png&#39;</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">depth</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/test_images/multimode_grasp_depth.png&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span>
+<span class="n">rgbd</span> <span class="o">=</span> <span class="n">RGBD</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="n">rgb</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">depth_min</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">depth_max</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+            <span class="n">denoise_ksize</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">denoise_ksize</span><span class="p">)</span>
+<span class="n">rgbd</span><span class="o">.</span><span class="n">set_workspace</span><span class="p">(</span><span class="n">pts</span><span class="o">=</span><span class="p">[(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">270</span><span class="p">),</span> <span class="p">(</span><span class="mi">889</span><span class="p">,</span> <span class="mi">273</span><span class="p">),</span> <span class="p">(</span><span class="mi">890</span><span class="p">,</span> <span class="mi">635</span><span class="p">),</span> <span class="p">(</span><span class="mi">359</span><span class="p">,</span> <span class="mi">632</span><span class="p">)])</span>
+
+<span class="c1"># predict</span>
+<span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">show_steps</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">detect_and_show_multimode_grasp</span><span class="p">(</span><span class="n">rgbd</span><span class="o">=</span><span class="n">rgbd</span><span class="p">,</span> <span class="n">grip_args</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">grip_net</span><span class="p">,</span>
+                                               <span class="n">suction_args</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">suction_net</span><span class="p">,</span>
+                                               <span class="n">inner_grip_args</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">inner_grip_net</span><span class="p">,</span>
+                                               <span class="n">args</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+
+<span class="c1"># show</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;reviewer&#39;</span><span class="p">,</span> <span class="n">ret</span><span class="p">[</span><span class="s1">&#39;im&#39;</span><span class="p">][:,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/fig_randompicking_sample_result.png"><img alt="../_images/fig_randompicking_sample_result.png" class="align-center" src="../_images/fig_randompicking_sample_result.png" style="width: 70%;" /></a>
+</section>
+<section id="parameters-tuning">
+<h2>5. Parameters tuning<a class="headerlink" href="#parameters-tuning" title="Permalink to this heading"></a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.erode_h</p></td>
+<td><p>gripper plate’s width</p></td>
+</tr>
+<tr class="row-odd"><td><p>grip_net.grip_w_ranges</p></td>
+<td><p>ranges of gripper’s width, which are tuned for each target object</p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.grad_thresh</p></td>
+<td><p>gradient threshold. Smaller value makes more grip candidates but noisy, and vice versa</p></td>
+</tr>
+<tr class="row-odd"><td><p>grip_net.remove_bg</p></td>
+<td><p>remove detected grips on the background or not</p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.top_n</p></td>
+<td><p>top n target grips</p></td>
+</tr>
+<tr class="row-odd"><td><p>grip_net.dy</p></td>
+<td><p>Smaller value makes more dense grip candidates.</p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.ellipse_axes</p></td>
+<td><p>Dimensions of ellipse that examines neighbor grips. For bigger object, dimension should be larger</p></td>
+</tr>
+<tr class="row-odd"><td><p>suction_net.pad_sizes</p></td>
+<td><p>Patch sizes of suction pose scanning process. Larger value should be set for larger object</p></td>
+</tr>
+<tr class="row-even"><td><p>suction_net.stride</p></td>
+<td><p>Stride of suction scanning process. Smaller value makes more suction candidates, but computational heavier.</p></td>
+</tr>
+<tr class="row-odd"><td><p>rpn.enable</p></td>
+<td><p>Enable RPN for suction detector or not</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 
 
