@@ -96,6 +96,10 @@
 </ul>
 </li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Others:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/others.html">Multimode Grasp Detection</a></li>
+</ul>
 
         </div>
       </div>
@@ -142,11 +146,101 @@
 <section id="module-kpick.object_detection.model">
 <span id="kpick-object-detection-model-module"></span><h2>kpick.object_detection.model module<a class="headerlink" href="#module-kpick.object_detection.model" title="Permalink to this heading"></a></h2>
 </section>
-<section id="kpick-object-detection-nanodet-detector-module">
-<h2>kpick.object_detection.nanodet_detector module<a class="headerlink" href="#kpick-object-detection-nanodet-detector-module" title="Permalink to this heading"></a></h2>
+<section id="module-kpick.object_detection.nanodet_detector">
+<span id="kpick-object-detection-nanodet-detector-module"></span><h2>kpick.object_detection.nanodet_detector module<a class="headerlink" href="#module-kpick.object_detection.nanodet_detector" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.object_detection.nanodet_detector.BaseNanoDet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.object_detection.nanodet_detector.</span></span><span class="sig-name descname"><span class="pre">BaseNanoDet</span></span><a class="headerlink" href="#kpick.object_detection.nanodet_detector.BaseNanoDet" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.object_detection.nanodet_detector.BaseNanoDet.get_model">
+<span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ckpt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda:0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.nanodet_detector.BaseNanoDet.get_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.object_detection.nanodet_detector.BaseNanoDet.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lefttop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.nanodet_detector.BaseNanoDet.run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.object_detection.nanodet_detector.NanoDetectorGui">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.object_detection.nanodet_detector.</span></span><span class="sig-name descname"><span class="pre">NanoDetectorGui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.nanodet_detector.NanoDetectorGui" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kpick.object_detection.nanodet_detector.NanodetDetector" title="kpick.object_detection.nanodet_detector.NanodetDetector"><code class="xref py py-class docutils literal notranslate"><span class="pre">NanodetDetector</span></code></a>, <a class="reference internal" href="kpick.base.html#kpick.base.base.DetGuiObj" title="kpick.base.base.DetGuiObj"><code class="xref py py-class docutils literal notranslate"><span class="pre">DetGuiObj</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.object_detection.nanodet_detector.NanoDetectorGui.get_model">
+<span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.nanodet_detector.NanoDetectorGui.get_model" title="Permalink to this definition"></a></dt>
+<dd><p>get model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.object_detection.nanodet_detector.NanoDetectorGui.gui_process_single">
+<span class="sig-name descname"><span class="pre">gui_process_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.nanodet_detector.NanoDetectorGui.gui_process_single" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.object_detection.nanodet_detector.NanoDetectorGui.show_det">
+<span class="sig-name descname"><span class="pre">show_det</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ret</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.nanodet_detector.NanoDetectorGui.show_det" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.object_detection.nanodet_detector.NanodetDetector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.object_detection.nanodet_detector.</span></span><span class="sig-name descname"><span class="pre">NanodetDetector</span></span><a class="headerlink" href="#kpick.object_detection.nanodet_detector.NanodetDetector" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="kpick.html#kpick.detector_base.BaseDetector" title="kpick.detector_base.BaseDetector"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDetector</span></code></a>, <a class="reference internal" href="#kpick.object_detection.nanodet_detector.BaseNanoDet" title="kpick.object_detection.nanodet_detector.BaseNanoDet"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseNanoDet</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.object_detection.nanodet_detector.NanodetDetector.get_model">
+<span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ckpt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda:0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.nanodet_detector.NanodetDetector.get_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.object_detection.nanodet_detector.NanodetDetector.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unnamed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lefttop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.nanodet_detector.NanodetDetector.run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.object_detection.nanodet_detector.test_nanodet_gui">
+<span class="sig-prename descclassname"><span class="pre">kpick.object_detection.nanodet_detector.</span></span><span class="sig-name descname"><span class="pre">test_nanodet_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ckpt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['unnamed']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_realsense</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda:0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.nanodet_detector.test_nanodet_gui" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </section>
-<section id="kpick-object-detection-test-module">
-<h2>kpick.object_detection.test module<a class="headerlink" href="#kpick-object-detection-test-module" title="Permalink to this heading"></a></h2>
+<section id="module-kpick.object_detection.test">
+<span id="kpick-object-detection-test-module"></span><h2>kpick.object_detection.test module<a class="headerlink" href="#module-kpick.object_detection.test" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.object_detection.test.Predictor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.object_detection.test.</span></span><span class="sig-name descname"><span class="pre">Predictor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda:0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.test.Predictor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.object_detection.test.Predictor.inference">
+<span class="sig-name descname"><span class="pre">inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.test.Predictor.inference" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.object_detection.test.Predictor.visualize">
+<span class="sig-name descname"><span class="pre">visualize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_thres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.test.Predictor.visualize" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.object_detection.test.get_image_list">
+<span class="sig-prename descclassname"><span class="pre">kpick.object_detection.test.</span></span><span class="sig-name descname"><span class="pre">get_image_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.test.get_image_list" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.object_detection.test.main">
+<span class="sig-prename descclassname"><span class="pre">kpick.object_detection.test.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.test.main" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.object_detection.test.parse_args">
+<span class="sig-prename descclassname"><span class="pre">kpick.object_detection.test.</span></span><span class="sig-name descname"><span class="pre">parse_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.object_detection.test.parse_args" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </section>
 <section id="module-kpick.object_detection">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-kpick.object_detection" title="Permalink to this heading"></a></h2>

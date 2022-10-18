@@ -96,6 +96,10 @@
 </ul>
 </li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Others:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../src/others.html">Multimode Grasp Detection</a></li>
+</ul>
 
         </div>
       </div>
@@ -129,8 +133,139 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
 </section>
-<section id="kpick-pick-suction-suction-detection-module">
-<h2>kpick.pick.suction.suction_detection module<a class="headerlink" href="#kpick-pick-suction-suction-detection-module" title="Permalink to this heading"></a></h2>
+<section id="module-kpick.pick.suction.suction_detection">
+<span id="kpick-pick-suction-suction-detection-module"></span><h2>kpick.pick.suction.suction_detection module<a class="headerlink" href="#module-kpick.pick.suction.suction_detection" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kpick.pick.suction.suction_detection.</span></span><span class="sig-name descname"><span class="pre">SuctionDetector</span></span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="kpick.pick.html#kpick.pick.base_grasp_detection.BaseGraspDetector" title="kpick.pick.base_grasp_detection.BaseGraspDetector"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseGraspDetector</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.average_score_suction">
+<span class="sig-name descname"><span class="pre">average_score_suction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Suction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.average_score_suction" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.detect_and_show_step0">
+<span class="sig-name descname"><span class="pre">detect_and_show_step0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.detect_and_show_step0" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.detect_and_show_step1">
+<span class="sig-name descname"><span class="pre">detect_and_show_step1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.detect_and_show_step1" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.detect_and_show_step2">
+<span class="sig-name descname"><span class="pre">detect_and_show_step2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgbd'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.detect_and_show_step2" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.detect_and_show_suctions">
+<span class="sig-name descname"><span class="pre">detect_and_show_suctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpn_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_bg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.detect_and_show_suctions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.detect_suctions">
+<span class="sig-name descname"><span class="pre">detect_suctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpn_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_bg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.detect_suctions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.detect_suctions_conv">
+<span class="sig-name descname"><span class="pre">detect_suctions_conv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_bg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.detect_suctions_conv" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.detect_suctions_conv_rpn">
+<span class="sig-name descname"><span class="pre">detect_suctions_conv_rpn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpn_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_bg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.detect_suctions_conv_rpn" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.detect_suctions_size">
+<span class="sig-name descname"><span class="pre">detect_suctions_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.detect_suctions_size" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.detect_suctions_sliding">
+<span class="sig-name descname"><span class="pre">detect_suctions_sliding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_bg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.detect_suctions_sliding" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.detect_suctions_sliding_rpn">
+<span class="sig-name descname"><span class="pre">detect_suctions_sliding_rpn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpn_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_bg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.detect_suctions_sliding_rpn" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.find_suction_candidates">
+<span class="sig-name descname"><span class="pre">find_suction_candidates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.find_suction_candidates" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.get_suction_in_workspace">
+<span class="sig-name descname"><span class="pre">get_suction_in_workspace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Suction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_boxes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.get_suction_in_workspace" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpn_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_train_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.init" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.remove_suction_on_background">
+<span class="sig-name descname"><span class="pre">remove_suction_on_background</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Suction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_boxes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.remove_suction_on_background" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.score_suction">
+<span class="sig-name descname"><span class="pre">score_suction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_boxes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.score_suction" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.select_best_n_suctions">
+<span class="sig-name descname"><span class="pre">select_best_n_suctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Suction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.select_best_n_suctions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.showScore">
+<span class="sig-name descname"><span class="pre">showScore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Score</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.showScore" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.show_suctions">
+<span class="sig-name descname"><span class="pre">show_suctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">det</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.show_suctions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.sort_suction">
+<span class="sig-name descname"><span class="pre">sort_suction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Suction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.sort_suction" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.SuctionDetector.wrap_suction_from_boxes">
+<span class="sig-name descname"><span class="pre">wrap_suction_from_boxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgbd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_boxes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.SuctionDetector.wrap_suction_from_boxes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.demo_suction_gui">
+<span class="sig-prename descclassname"><span class="pre">kpick.pick.suction.suction_detection.</span></span><span class="sig-name descname"><span class="pre">demo_suction_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">title='Suction</span> <span class="pre">Detection</span> <span class="pre">GUI',</span> <span class="pre">DetectorGui=&lt;class</span> <span class="pre">'kpick.pick.suction.suction_detection.get_suction_detector_gui.&lt;locals&gt;.SuctionGuiDetector'&gt;,</span> <span class="pre">default_args=&lt;ketisdk.utils.proc_utils.CFG</span> <span class="pre">object&gt;,</span> <span class="pre">cfg_path=None,</span> <span class="pre">default_cfg_path='configs/default.cfg',</span> <span class="pre">sensors=['realsense'],</span> <span class="pre">key_args=[],</span> <span class="pre">data_root=None,</span> <span class="pre">rgb_formats=None,</span> <span class="pre">depth_formats=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.demo_suction_gui" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.get_default_suction_args">
+<span class="sig-prename descclassname"><span class="pre">kpick.pick.suction.suction_detection.</span></span><span class="sig-name descname"><span class="pre">get_default_suction_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.get_default_suction_args" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.get_suction_detector_gui">
+<span class="sig-prename descclassname"><span class="pre">kpick.pick.suction.suction_detection.</span></span><span class="sig-name descname"><span class="pre">get_suction_detector_gui</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DetectorObj=&lt;class</span> <span class="pre">'kpick.pick.suction.suction_detection.get_suction_detector_obj.&lt;locals&gt;.SuctionDetectorObj'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.get_suction_detector_gui" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kpick.pick.suction.suction_detection.get_suction_detector_obj">
+<span class="sig-prename descclassname"><span class="pre">kpick.pick.suction.suction_detection.</span></span><span class="sig-name descname"><span class="pre">get_suction_detector_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Detector=&lt;class</span> <span class="pre">'kpick.pick.suction.suction_detection.SuctionDetector'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_args=&lt;ketisdk.utils.proc_utils.CFG</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kpick.pick.suction.suction_detection.get_suction_detector_obj" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </section>
 <section id="module-kpick.pick.suction">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-kpick.pick.suction" title="Permalink to this heading"></a></h2>

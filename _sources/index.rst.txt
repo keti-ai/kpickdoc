@@ -56,6 +56,11 @@ Links
 
    api_docs/modules
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Others:
+
+   src/others.rst
 
 
 Indices and tables
