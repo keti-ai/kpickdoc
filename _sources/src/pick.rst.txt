@@ -10,6 +10,107 @@ Suction Detection
 Inner Grip Detection
 ------------
 
+.. image:: ../images/fig_inner_grip_diagram.png
+   :width: 100 %
+
+1. Output format
+==================
+
+
+.. list-table::
+   :widths: 10 90
+   :header-rows: 0
+
+   * - **Field**
+     - **Description**
+   * - inner_grip
+     - num_grip x 4 where a grip g=[xc, yc, zc, w, score]
+   * - best_inner_ind
+     - best grip index of inner grips
+   * - best_n_inner_inds
+     - top n indexes of inner grips
+   * - best_inner
+     - target inner grip selected from all inner grips
+   * - im
+     - display grip on the input image
+
+
+2. Create and Load Detector
+===========================
+* Using the default Kpick's detector ::
+
+    from kpick.pick.inner_grip_detector import get_inner_detector_obj, InnerGripDetector
+    detector = get_inner_detector_obj()(cfg_path=cfg_path)
+
+.. note:: Please refer **configs/inner_outer_grip.cfg**
+
+3. Modify and Load Detector
+============================
+* Extending the default Kpick's detector ::
+
+    from kpick.pick.inner_grip_detector import get_inner_detector_obj, InnerGripDetector
+    class AppDetector(InnerGripDetector):
+        def new_function(self):
+            print('new function')
+
+    detector = get_inner_detector_obj(Detector=AppDetector)(cfg_path=cfg_path)
+
+4. Demo on single RGB-D image
+==============================
+::
+
+    import cv2
+    from ketisdk.vision.utils.rgbd_utils_v2 import RGBD
+
+    # load model
+    detector = get_inner_detector_obj()(cfg_path='configs/inner_grip.cfg')
+
+    # load image
+    rgb = cv2.imread('data/test_images/inner_grip_rgb.png')[:, :, ::-1]
+    depth = cv2.imread('data/test_images/inner_grip_depth.png', cv2.IMREAD_UNCHANGED)
+    rgbd = RGBD(rgb=rgb, depth=depth, depth_min=600, depth_max=800,
+                denoise_ksize=detector.args.sensor.denoise_ksize)
+    rgbd.set_workspace(pts=[(424, 176), (976, 180), (971, 559), (426, 553)])
+
+    # predict
+    detector.args.flag.show_steps = True
+    ret = detector.detect_and_show_inner_grips(rgbd=rgbd, net_args=detector.args.inner_grip_net, args=detector.args,
+                                               remove_bg=detector.args.inner_grip_net.remove_bg)
+
+    # show
+    cv2.imshow('reviewer', ret['im'][:, :, ::-1])
+    cv2.waitKey()
+
+.. image:: ../images/fig_inner_result.png
+   :width: 70 %
+   :align: center
+
+5. Parameters tuning
+==============================
+.. list-table::
+   :widths: 10 90
+   :header-rows: 0
+
+   * - **Parameter**
+     - **Description**
+   * - grip_net.erode_h
+     - gripper plate's width
+   * - grip_net.grip_w_ranges
+     - ranges of gripper's width, which are tuned for each target object
+   * - grip_net.grad_thresh
+     - gradient threshold. Smaller value makes more grip candidates but noisy, and vice versa
+   * - grip_net.remove_bg
+     - remove detected grips on the background or not
+   * - grip_net.top_n
+     - top n target grips
+   * - grip_net.dy
+     - Smaller value makes more dense grip candidates.
+   * - grip_net.ellipse_axes
+     - Dimensions of ellipse that examines neighbor grips. For bigger object, dimension should be larger
+   * - inner_grip_net.score_thresh
+     - Score threshold of inner grip detector
+
+
 Inner and Outer Grip Detection
 ------------
 
@@ -91,6 +192,9 @@ Inner and Outer Grip Detection
     cv2.imshow('reviewer', ret['im'][:, :, ::-1])
     cv2.waitKey()
 
+.. image:: ../images/fig_inner_outer_result.png
+   :width: 70 %
+   :align: center
 
 5. Parameters tuning
 ==============================
@@ -218,9 +322,27 @@ Hybrid Grasp Detection
      - Enable RPN for suction detector or not
 
 
+Depth completion of transparent objects
+------------
 
+1. Testing on existing solution
+==============================
 
+- Model: TransCG: A Large-Scale Real-World Dataset for Transparent Object Depth Completion and A Grasping Baseline
+.. image:: ../images/fig_transcg_net_diagram.png
+   :width: 100 %
+* `TransCG link`_
+.. _TransCG link: https://github.com/Galaxies99/TransCG
 
+.. image:: ../images/fig_transCG_input_rgb.png
+   :width: 70 %
+.. image:: ../images/fig_transCG_input_depth.png
+   :width: 70 %
+Input RGB and depth imgaes
+
+.. image:: ../images/fig_transCG_output_depth.png
+   :width: 70 %
+Output depth
 
 
 

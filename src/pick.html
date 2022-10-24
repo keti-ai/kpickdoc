@@ -56,8 +56,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Grip Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#suction-detection">Suction Detection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#inner-grip-detection">Inner Grip Detection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#inner-and-outer-grip-detection">Inner and Outer Grip Detection</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="#inner-grip-detection">Inner Grip Detection</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#output-format">1. Output format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-and-load-detector">2. Create and Load Detector</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#modify-and-load-detector">3. Modify and Load Detector</a></li>
@@ -65,12 +64,24 @@
 <li class="toctree-l2"><a class="reference internal" href="#parameters-tuning">5. Parameters tuning</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#hybrid-grasp-detection">Hybrid Grasp Detection</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="#inner-and-outer-grip-detection">Inner and Outer Grip Detection</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">1. Output format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">2. Create and Load Detector</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">3. Modify and Load Detector</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id4">4. Demo on single RGB-D image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id5">5. Parameters tuning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#hybrid-grasp-detection">Hybrid Grasp Detection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id6">1. Output format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">2. Create and Load Detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">3. Modify and Load Detector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">4. Demo on single RGB-D image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">5. Parameters tuning</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#depth-completion-of-transparent-objects">Depth completion of transparent objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#testing-on-existing-solution">1. Testing on existing solution</a></li>
 </ul>
 </li>
 </ul>
@@ -90,7 +101,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Others:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="others.html">Multimode Grasp Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="others.html">Robotplus Challenge 2022-10/11</a></li>
 </ul>
 
         </div>
@@ -126,10 +137,7 @@
 </section>
 <section id="inner-grip-detection">
 <h1>Inner Grip Detection<a class="headerlink" href="#inner-grip-detection" title="Permalink to this heading"></a></h1>
-</section>
-<section id="inner-and-outer-grip-detection">
-<h1>Inner and Outer Grip Detection<a class="headerlink" href="#inner-and-outer-grip-detection" title="Permalink to this heading"></a></h1>
-<a class="reference internal image-reference" href="../_images/fig_inner_outer_grip_diagram.png"><img alt="../_images/fig_inner_outer_grip_diagram.png" src="../_images/fig_inner_outer_grip_diagram.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/fig_inner_grip_diagram.png"><img alt="../_images/fig_inner_grip_diagram.png" src="../_images/fig_inner_grip_diagram.png" style="width: 100%;" /></a>
 <section id="output-format">
 <h2>1. Output format<a class="headerlink" href="#output-format" title="Permalink to this heading"></a></h2>
 <table class="colwidths-given docutils align-default">
@@ -141,29 +149,17 @@
 <tr class="row-odd"><td><p><strong>Field</strong></p></td>
 <td><p><strong>Description</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>grip</p></td>
-<td><p>num_grip x 10 nd.array where a grip g=[xc,yc,zc,W, H, x0, y0, x1, y1, score]. (x0,y0) and (x1, y1) are 2 endpoints of the grip</p></td>
-</tr>
-<tr class="row-odd"><td><p>inner_grip</p></td>
+<tr class="row-even"><td><p>inner_grip</p></td>
 <td><p>num_grip x 4 where a grip g=[xc, yc, zc, w, score]</p></td>
-</tr>
-<tr class="row-even"><td><p>best_ind</p></td>
-<td><p>best grip index of grips</p></td>
 </tr>
 <tr class="row-odd"><td><p>best_inner_ind</p></td>
 <td><p>best grip index of inner grips</p></td>
 </tr>
-<tr class="row-even"><td><p>best_n_inds</p></td>
-<td><p>top n indexes of grips</p></td>
-</tr>
-<tr class="row-odd"><td><p>best_n_inner_inds</p></td>
+<tr class="row-even"><td><p>best_n_inner_inds</p></td>
 <td><p>top n indexes of inner grips</p></td>
 </tr>
-<tr class="row-even"><td><p>target</p></td>
-<td><p>target grip selected from all grips and inner grips</p></td>
-</tr>
-<tr class="row-odd"><td><p>target_name</p></td>
-<td><p>name of target grip [grip/inner_grip]</p></td>
+<tr class="row-odd"><td><p>best_inner</p></td>
+<td><p>target inner grip selected from all inner grips</p></td>
 </tr>
 <tr class="row-even"><td><p>im</p></td>
 <td><p>display grip on the input image</p></td>
@@ -175,8 +171,8 @@
 <h2>2. Create and Load Detector<a class="headerlink" href="#create-and-load-detector" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>Using the default Kpick’s detector</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.pick.grip_inner_outer</span> <span class="kn">import</span> <span class="n">get_inner_outer_grip_detector_obj</span>
-<span class="n">detector</span> <span class="o">=</span> <span class="n">get_inner_outer_grip_detector_obj</span><span class="p">()(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">cfg_path</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.pick.inner_grip_detector</span> <span class="kn">import</span> <span class="n">get_inner_detector_obj</span><span class="p">,</span> <span class="n">InnerGripDetector</span>
+<span class="n">detector</span> <span class="o">=</span> <span class="n">get_inner_detector_obj</span><span class="p">()(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">cfg_path</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -190,12 +186,12 @@
 <h2>3. Modify and Load Detector<a class="headerlink" href="#modify-and-load-detector" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>Extending the default Kpick’s detector</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.pick.grip_inner_outer</span> <span class="kn">import</span> <span class="n">get_inner_outer_grip_detector_obj</span><span class="p">,</span> <span class="n">InnerOuterGripDetector</span>
-<span class="k">class</span> <span class="nc">AppDetector</span><span class="p">(</span><span class="n">InnerOuterGripDetector</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.pick.inner_grip_detector</span> <span class="kn">import</span> <span class="n">get_inner_detector_obj</span><span class="p">,</span> <span class="n">InnerGripDetector</span>
+<span class="k">class</span> <span class="nc">AppDetector</span><span class="p">(</span><span class="n">InnerGripDetector</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">new_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;new function&#39;</span><span class="p">)</span>
 
-<span class="n">detector</span> <span class="o">=</span> <span class="n">get_inner_outer_grip_detector_obj</span><span class="p">(</span><span class="n">Detector</span><span class="o">=</span><span class="n">AppDetector</span><span class="p">)(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">cfg_path</span><span class="p">)</span>
+<span class="n">detector</span> <span class="o">=</span> <span class="n">get_inner_detector_obj</span><span class="p">(</span><span class="n">Detector</span><span class="o">=</span><span class="n">AppDetector</span><span class="p">)(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">cfg_path</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -207,24 +203,26 @@
 <span class="kn">from</span> <span class="nn">ketisdk.vision.utils.rgbd_utils_v2</span> <span class="kn">import</span> <span class="n">RGBD</span>
 
 <span class="c1"># load model</span>
-<span class="n">detector</span> <span class="o">=</span> <span class="n">get_inner_outer_grip_detector_obj</span><span class="p">()(</span><span class="n">cfg_path</span><span class="o">=</span><span class="s1">&#39;configs/inner_outer_grip.cfg&#39;</span><span class="p">)</span>
+<span class="n">detector</span> <span class="o">=</span> <span class="n">get_inner_detector_obj</span><span class="p">()(</span><span class="n">cfg_path</span><span class="o">=</span><span class="s1">&#39;configs/inner_grip.cfg&#39;</span><span class="p">)</span>
 
 <span class="c1"># load image</span>
-<span class="n">rgb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/test_images/inner_outer_grip_rgb.png&#39;</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">depth</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/test_images/inner_outer_grip_depth.png&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span>
+<span class="n">rgb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/test_images/inner_grip_rgb.png&#39;</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">depth</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/test_images/inner_grip_depth.png&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span>
 <span class="n">rgbd</span> <span class="o">=</span> <span class="n">RGBD</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="n">rgb</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">depth_min</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">depth_max</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
             <span class="n">denoise_ksize</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">denoise_ksize</span><span class="p">)</span>
-<span class="n">rgbd</span><span class="o">.</span><span class="n">set_workspace</span><span class="p">(</span><span class="n">pts</span><span class="o">=</span><span class="p">[(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">270</span><span class="p">),</span> <span class="p">(</span><span class="mi">889</span><span class="p">,</span> <span class="mi">273</span><span class="p">),</span> <span class="p">(</span><span class="mi">890</span><span class="p">,</span> <span class="mi">635</span><span class="p">),</span> <span class="p">(</span><span class="mi">359</span><span class="p">,</span> <span class="mi">632</span><span class="p">)])</span>
+<span class="n">rgbd</span><span class="o">.</span><span class="n">set_workspace</span><span class="p">(</span><span class="n">pts</span><span class="o">=</span><span class="p">[(</span><span class="mi">424</span><span class="p">,</span> <span class="mi">176</span><span class="p">),</span> <span class="p">(</span><span class="mi">976</span><span class="p">,</span> <span class="mi">180</span><span class="p">),</span> <span class="p">(</span><span class="mi">971</span><span class="p">,</span> <span class="mi">559</span><span class="p">),</span> <span class="p">(</span><span class="mi">426</span><span class="p">,</span> <span class="mi">553</span><span class="p">)])</span>
 
 <span class="c1"># predict</span>
 <span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">show_steps</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">ret</span> <span class="o">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">detect_and_show</span><span class="p">(</span><span class="n">rgbd</span><span class="o">=</span><span class="n">rgbd</span><span class="p">)</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">detect_and_show_inner_grips</span><span class="p">(</span><span class="n">rgbd</span><span class="o">=</span><span class="n">rgbd</span><span class="p">,</span> <span class="n">net_args</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">inner_grip_net</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="p">,</span>
+                                           <span class="n">remove_bg</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">inner_grip_net</span><span class="o">.</span><span class="n">remove_bg</span><span class="p">)</span>
 
 <span class="c1"># show</span>
 <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;reviewer&#39;</span><span class="p">,</span> <span class="n">ret</span><span class="p">[</span><span class="s1">&#39;im&#39;</span><span class="p">][:,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
 </pre></div>
 </div>
+<a class="reference internal image-reference" href="../_images/fig_inner_result.png"><img alt="../_images/fig_inner_result.png" class="align-center" src="../_images/fig_inner_result.png" style="width: 70%;" /></a>
 </section>
 <section id="parameters-tuning">
 <h2>5. Parameters tuning<a class="headerlink" href="#parameters-tuning" title="Permalink to this heading"></a></h2>
@@ -265,11 +263,150 @@
 </table>
 </section>
 </section>
+<section id="inner-and-outer-grip-detection">
+<h1>Inner and Outer Grip Detection<a class="headerlink" href="#inner-and-outer-grip-detection" title="Permalink to this heading"></a></h1>
+<a class="reference internal image-reference" href="../_images/fig_inner_outer_grip_diagram.png"><img alt="../_images/fig_inner_outer_grip_diagram.png" src="../_images/fig_inner_outer_grip_diagram.png" style="width: 100%;" /></a>
+<section id="id1">
+<h2>1. Output format<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Field</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>grip</p></td>
+<td><p>num_grip x 10 nd.array where a grip g=[xc,yc,zc,W, H, x0, y0, x1, y1, score]. (x0,y0) and (x1, y1) are 2 endpoints of the grip</p></td>
+</tr>
+<tr class="row-odd"><td><p>inner_grip</p></td>
+<td><p>num_grip x 4 where a grip g=[xc, yc, zc, w, score]</p></td>
+</tr>
+<tr class="row-even"><td><p>best_ind</p></td>
+<td><p>best grip index of grips</p></td>
+</tr>
+<tr class="row-odd"><td><p>best_inner_ind</p></td>
+<td><p>best grip index of inner grips</p></td>
+</tr>
+<tr class="row-even"><td><p>best_n_inds</p></td>
+<td><p>top n indexes of grips</p></td>
+</tr>
+<tr class="row-odd"><td><p>best_n_inner_inds</p></td>
+<td><p>top n indexes of inner grips</p></td>
+</tr>
+<tr class="row-even"><td><p>target</p></td>
+<td><p>target grip selected from all grips and inner grips</p></td>
+</tr>
+<tr class="row-odd"><td><p>target_name</p></td>
+<td><p>name of target grip [grip/inner_grip]</p></td>
+</tr>
+<tr class="row-even"><td><p>im</p></td>
+<td><p>display grip on the input image</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h2>2. Create and Load Detector<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Using the default Kpick’s detector</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.pick.grip_inner_outer</span> <span class="kn">import</span> <span class="n">get_inner_outer_grip_detector_obj</span>
+<span class="n">detector</span> <span class="o">=</span> <span class="n">get_inner_outer_grip_detector_obj</span><span class="p">()(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">cfg_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please refer <strong>configs/inner_outer_grip.cfg</strong></p>
+</div>
+</section>
+<section id="id3">
+<h2>3. Modify and Load Detector<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<ul>
+<li><p>Extending the default Kpick’s detector</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.pick.grip_inner_outer</span> <span class="kn">import</span> <span class="n">get_inner_outer_grip_detector_obj</span><span class="p">,</span> <span class="n">InnerOuterGripDetector</span>
+<span class="k">class</span> <span class="nc">AppDetector</span><span class="p">(</span><span class="n">InnerOuterGripDetector</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">new_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;new function&#39;</span><span class="p">)</span>
+
+<span class="n">detector</span> <span class="o">=</span> <span class="n">get_inner_outer_grip_detector_obj</span><span class="p">(</span><span class="n">Detector</span><span class="o">=</span><span class="n">AppDetector</span><span class="p">)(</span><span class="n">cfg_path</span><span class="o">=</span><span class="n">cfg_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="id4">
+<h2>4. Demo on single RGB-D image<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">from</span> <span class="nn">ketisdk.vision.utils.rgbd_utils_v2</span> <span class="kn">import</span> <span class="n">RGBD</span>
+
+<span class="c1"># load model</span>
+<span class="n">detector</span> <span class="o">=</span> <span class="n">get_inner_outer_grip_detector_obj</span><span class="p">()(</span><span class="n">cfg_path</span><span class="o">=</span><span class="s1">&#39;configs/inner_outer_grip.cfg&#39;</span><span class="p">)</span>
+
+<span class="c1"># load image</span>
+<span class="n">rgb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/test_images/inner_outer_grip_rgb.png&#39;</span><span class="p">)[:,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">depth</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;data/test_images/inner_outer_grip_depth.png&#39;</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_UNCHANGED</span><span class="p">)</span>
+<span class="n">rgbd</span> <span class="o">=</span> <span class="n">RGBD</span><span class="p">(</span><span class="n">rgb</span><span class="o">=</span><span class="n">rgb</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">depth_min</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">depth_max</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+            <span class="n">denoise_ksize</span><span class="o">=</span><span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">sensor</span><span class="o">.</span><span class="n">denoise_ksize</span><span class="p">)</span>
+<span class="n">rgbd</span><span class="o">.</span><span class="n">set_workspace</span><span class="p">(</span><span class="n">pts</span><span class="o">=</span><span class="p">[(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">270</span><span class="p">),</span> <span class="p">(</span><span class="mi">889</span><span class="p">,</span> <span class="mi">273</span><span class="p">),</span> <span class="p">(</span><span class="mi">890</span><span class="p">,</span> <span class="mi">635</span><span class="p">),</span> <span class="p">(</span><span class="mi">359</span><span class="p">,</span> <span class="mi">632</span><span class="p">)])</span>
+
+<span class="c1"># predict</span>
+<span class="n">detector</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">flag</span><span class="o">.</span><span class="n">show_steps</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">detect_and_show</span><span class="p">(</span><span class="n">rgbd</span><span class="o">=</span><span class="n">rgbd</span><span class="p">)</span>
+
+<span class="c1"># show</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;reviewer&#39;</span><span class="p">,</span> <span class="n">ret</span><span class="p">[</span><span class="s1">&#39;im&#39;</span><span class="p">][:,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">()</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/fig_inner_outer_result.png"><img alt="../_images/fig_inner_outer_result.png" class="align-center" src="../_images/fig_inner_outer_result.png" style="width: 70%;" /></a>
+</section>
+<section id="id5">
+<h2>5. Parameters tuning<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.erode_h</p></td>
+<td><p>gripper plate’s width</p></td>
+</tr>
+<tr class="row-odd"><td><p>grip_net.grip_w_ranges</p></td>
+<td><p>ranges of gripper’s width, which are tuned for each target object</p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.grad_thresh</p></td>
+<td><p>gradient threshold. Smaller value makes more grip candidates but noisy, and vice versa</p></td>
+</tr>
+<tr class="row-odd"><td><p>grip_net.remove_bg</p></td>
+<td><p>remove detected grips on the background or not</p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.top_n</p></td>
+<td><p>top n target grips</p></td>
+</tr>
+<tr class="row-odd"><td><p>grip_net.dy</p></td>
+<td><p>Smaller value makes more dense grip candidates.</p></td>
+</tr>
+<tr class="row-even"><td><p>grip_net.ellipse_axes</p></td>
+<td><p>Dimensions of ellipse that examines neighbor grips. For bigger object, dimension should be larger</p></td>
+</tr>
+<tr class="row-odd"><td><p>inner_grip_net.score_thresh</p></td>
+<td><p>Score threshold of inner grip detector</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 <section id="hybrid-grasp-detection">
 <h1>Hybrid Grasp Detection<a class="headerlink" href="#hybrid-grasp-detection" title="Permalink to this heading"></a></h1>
 <a class="reference internal image-reference" href="../_images/fig_hybrid_grasp_diagram.png"><img alt="../_images/fig_hybrid_grasp_diagram.png" src="../_images/fig_hybrid_grasp_diagram.png" style="width: 100%;" /></a>
-<section id="id1">
-<h2>1. Output format<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<section id="id6">
+<h2>1. Output format<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -294,8 +431,8 @@
 </tbody>
 </table>
 </section>
-<section id="id2">
-<h2>2. Create and Load Detector<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<section id="id7">
+<h2>2. Create and Load Detector<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>Using the default Kpick’s detector</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.pick.hybrid_grasp</span> <span class="kn">import</span> <span class="n">get_hybrid_grasp_detector_obj</span>
@@ -309,8 +446,8 @@
 <p>Please refer <strong>configs/hybrid_grasp.cfg</strong></p>
 </div>
 </section>
-<section id="id3">
-<h2>3. Modify and Load Detector<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<section id="id8">
+<h2>3. Modify and Load Detector<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>Extending the default Kpick’s detector</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kpick.pick.hybrid_grasp</span> <span class="kn">import</span> <span class="n">get_hybrid_grasp_detector_obj</span><span class="p">,</span> <span class="n">HybridGraspDetector</span>
@@ -324,8 +461,8 @@
 </li>
 </ul>
 </section>
-<section id="id4">
-<h2>4. Demo on single RGB-D image<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<section id="id9">
+<h2>4. Demo on single RGB-D image<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
 <span class="kn">from</span> <span class="nn">ketisdk.vision.utils.rgbd_utils_v2</span> <span class="kn">import</span> <span class="n">RGBD</span>
 
@@ -349,8 +486,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id5">
-<h2>5. Parameters tuning<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<section id="id10">
+<h2>5. Parameters tuning<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -392,6 +529,24 @@
 </tr>
 </tbody>
 </table>
+</section>
+</section>
+<section id="depth-completion-of-transparent-objects">
+<h1>Depth completion of transparent objects<a class="headerlink" href="#depth-completion-of-transparent-objects" title="Permalink to this heading"></a></h1>
+<section id="testing-on-existing-solution">
+<h2>1. Testing on existing solution<a class="headerlink" href="#testing-on-existing-solution" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Model: TransCG: A Large-Scale Real-World Dataset for Transparent Object Depth Completion and A Grasping Baseline</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/fig_transcg_net_diagram.png"><img alt="../_images/fig_transcg_net_diagram.png" src="../_images/fig_transcg_net_diagram.png" style="width: 100%;" /></a>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Galaxies99/TransCG">TransCG link</a></p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/fig_transCG_input_rgb.png"><img alt="../_images/fig_transCG_input_rgb.png" src="../_images/fig_transCG_input_rgb.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../_images/fig_transCG_input_depth.png"><img alt="../_images/fig_transCG_input_depth.png" src="../_images/fig_transCG_input_depth.png" style="width: 70%;" /></a>
+<p>Input RGB and depth imgaes</p>
+<a class="reference internal image-reference" href="../_images/fig_transCG_output_depth.png"><img alt="../_images/fig_transCG_output_depth.png" src="../_images/fig_transCG_output_depth.png" style="width: 70%;" /></a>
+<p>Output depth</p>
 </section>
 </section>
 
