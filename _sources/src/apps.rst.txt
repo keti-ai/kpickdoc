@@ -76,7 +76,7 @@ Mujin
 
 Order Picking
 ---------------
-.. .. image:: ../images/fig_multimode_grasp_diagram.png
+ .. image:: ../images/fig_orderpicking_diagram.png
    :width: 100 %
 
 1. Output format
