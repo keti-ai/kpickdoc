@@ -83,7 +83,7 @@ Kimchi
 Smart Gripper
 --------------
 
-Multimode Grasp Detection
+Random Piece Picking
 ------------
 
 .. image:: ../images/fig_multimode_grasp_diagram.png
@@ -109,23 +109,22 @@ Multimode Grasp Detection
 """""""""""""""""
 * Using the default Kpick's detector ::
 
-    from kpick.pick.multimode_grasp import get_multimode_grasp_detector_obj
-    from kpick.apps.randompicking.detector import RandomPickDetector
-    detector = get_multimode_grasp_detector_obj(RandomPickDetector)(cfg_path=cfg_path)
+    from kpick.apps.randompicking.detector import create_and_load_random_picking_detector
+    detector = create_and_load_random_picking_detector(detector_type='suction', cfg_path=cfg_path)
 
-.. note:: Please refer **kpick/apps/randompicking/configs/multimode_grasp.cfg**
+.. note:: Please refer **kpick/apps/randompicking/configs/*.cfg**
 
 3. Modify and Load Detector
 """""""""""""""""
 * Extending the default Kpick's detector ::
 
-    from kpick.pick.multimode_grasp import get_multimode_grasp_detector_obj
-    from kpick.apps.randompicking.detector import RandomPickDetector
-    class AppDetector(RandomPickDetector):
+    from kpick.apps.randompicking.detector import create_and_load_random_picking_detector,
+    OnePointDualGraspDetector, OnePointDualGraspDetector, RandomGripDetector, RandomSuctionDetector
+    class AppDetector(RandomSuctionDetector):
         def new_function(self):
             print('new function')
 
-    detector = get_multimode_grasp_detector_obj(AppDetector)(cfg_path=cfg_path)
+    detector = RandomGripDetector(Detector=AppDetector, cfg_path=cfg_path, detector_type='suction')
 
 4. Demo on single RGB-D image
 """""""""""""""""
@@ -138,17 +137,34 @@ Multimode Grasp Detection
     import kpick
     KPICK_DIR = os.path.split(kpick.__file__)[0]
 
-    # load model
-    detector = get_multimode_grasp_detector_obj(RandomPickDetector)(cfg_path=os.path.join(KPICK_DIR, 'apps/randompicking/configs/multimode_grasp.cfg'))
-
     # load image
-    rgb = cv2.imread('data/test_images/multimode_grasp_rgb.png')[:, :, ::-1]
-    depth = cv2.imread('data/test_images/multimode_grasp_depth.png', cv2.IMREAD_UNCHANGED)
-    rgbd = RGBD(rgb=rgb, depth=depth, depth_min=600, depth_max=800,
-                denoise_ksize=detector.args.sensor.denoise_ksize)
-    rgbd.set_workspace(pts=[(360, 270), (889, 273), (890, 635), (359, 632)])
+    rgb = cv2.imread(os.path.join(KPICK_DIR, 'apps/randompicking/test_images/01_rgb.png'))[:, :, ::-1]
+    depth = cv2.imread(os.path.join(KPICK_DIR, 'apps/randompicking/test_images/01_depth.png'), cv2.IMREAD_UNCHANGED)
+    rgbd = RGBD(rgb=rgb, depth=depth, depth_min=600, depth_max=800)
+
+    # set crop roi
+    rgbd.set_workspace(pts=[(348, 193), (894, 194), (894, 594), (345, 590)])
 
     # predict
+    detector = create_and_load_random_picking_detector(detector_type='grip')
+    detector.args.flag.show_steps = True
+    ret = detector.detect_and_show_grips(rgbd=rgbd, net_args=detector.args.grip_net,
+                                         args=detector.args, remove_bg=detector.args.grip_net.remove_bg)
+
+    # show
+    cv2.imshow('grip', ret['im'][:, :, ::-1])
+
+    # predict
+    detector = create_and_load_random_picking_detector(detector_type='suction')
+    detector.args.flag.show_steps = True
+    ret = detector.detect_and_show_suctions(rgbd=rgbd, net_args=detector.args.suction_net, args=detector.args,
+                                            remove_bg=detector.args.suction_net.remove_bg, rpn_args=detector.args.rpn)
+
+    # show
+    cv2.imshow('suction', ret['im'][:, :, ::-1])
+
+    # predict
+    detector = create_and_load_random_picking_detector(detector_type='one_point_dual')
     detector.args.flag.show_steps = True
     ret = detector.detect_and_show_multimode_grasp(rgbd=rgbd, grip_args=detector.args.grip_net,
                                                    suction_args=detector.args.suction_net,
@@ -156,7 +172,18 @@ Multimode Grasp Detection
                                                    args=detector.args)
 
     # show
-    cv2.imshow('reviewer', ret['im'][:, :, ::-1])
+    cv2.imshow('one_point_dual', ret['im'][:, :, ::-1])
+
+    # predict
+    detector = create_and_load_random_picking_detector(detector_type='two_points_dual')
+    detector.args.flag.show_steps = True
+    ret = detector.detect_and_show_multimode_grasp(rgbd=rgbd, grip_args=detector.args.grip_net,
+                                                   suction_args=detector.args.suction_net,
+                                                   inner_grip_args=detector.args.inner_grip_net,
+                                                   args=detector.args)
+
+    # show
+    cv2.imshow('two_points_dual', ret['im'][:, :, ::-1])
     cv2.waitKey()
 
 .. image:: ../images/fig_randompicking_sample_result.png
