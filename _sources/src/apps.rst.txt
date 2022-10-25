@@ -76,6 +76,98 @@ Mujin
 
 Order Picking
 ---------------
+.. .. image:: ../images/fig_multimode_grasp_diagram.png
+   :width: 100 %
+
+1. Output format
+"""""""""""""""""
+
+.. list-table::
+   :widths: 10 90
+   :header-rows: 0
+
+   * - **Field**
+     - **Description**
+   * - suction
+     - all suction candidates. Num_suction x 4, where each row presents a suction with format is [x,y,z,score]
+   * - best_n_inds
+     - top n best suction grasp indexes
+   * - bes_ind
+     - best suction grasp index
+   * - best
+     - target suction grasp
+   * - im
+     - display suctions on the input image
+
+2. Create and Load Detector on Custom Project
+"""""""""""""""""
+* Extending the default Kpick's detector ::
+
+    from kpick.apps.orderpicking.detector import create_and_load_order_detector, OrderDetector
+    class AppDetector(OrderDetector):
+        def new_function(self):
+            print('new function')
+
+    detector = create_and_load_order_detector(Detector=AppDetector, cfg_path=cfg_path)
+
+3. Demo on single RGB-D image
+"""""""""""""""""
+::
+
+    import cv2
+    import kpick
+    import os
+    from ketisdk.vision.utils.rgbd_utils_v2 import RGBD
+
+    KPICK_DIR = os.path.split(kpick.__file__)[0]
+
+    # configs
+    depth_min = 700
+    depth_max = 900
+    workspace = [(398, 172), (949, 174), (949, 580), (398, 572)]
+
+    # load image
+    rgb = cv2.imread(os.path.join(KPICK_DIR, 'apps/orderpicking/test_images/1_rgb.png'))[:, :, ::-1]
+    depth = cv2.imread(os.path.join(KPICK_DIR, 'apps/orderpicking/test_images/1_depth.png'), cv2.IMREAD_UNCHANGED)
+    rgbd = RGBD(rgb=rgb, depth=depth, depth_min=depth_min, depth_max=depth_max)
+    rgbd.set_workspace(pts=workspace)
+
+    # load model
+    detector = create_and_load_order_detector()
+
+    # predict
+    detector.args.flag.show_steps = False
+    ret = detector.detect_and_show_suctions(rgbd=rgbd, net_args=detector.args.suction_net, rpn_args=detector.args.rpn,
+                                            args=detector.args, remove_bg=False)
+
+    # show
+    cv2.imshow('reviewer', ret['im'][:, :, ::-1])
+    cv2.waitKey()
+
+.. image:: ../images/fig_orderpicking_sample_result.png
+   :width: 70 %
+   :align: center
+
+4. Parameters tuning
+"""""""""""""""""
+.. list-table::
+   :widths: 10 90
+   :header-rows: 0
+
+   * - **Parameter**
+     - **Description**
+   * - suction_net.pad_sizes
+     - Patch sizes of suction pose scanning process. Larger value should be set for larger object
+   * - suction_net.stride
+     - Stride of suction scanning process. Smaller value makes more suction candidates, but computational heavier.
+   * - rpn.enable
+     - Enable RPN for suction detector or not
+   * - rpn.score_thresh
+     - Score threshold of RPN
+   * - rpn.min_size
+     - Minimum size of larger size of a detected object
+
+
 
 Kimchi
 ------
